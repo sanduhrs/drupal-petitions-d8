@@ -1,0 +1,139 @@
+/**
+ * @file
+ * Select input elements.
+ */
+
+@import "../base/variables.pcss.css";
+
+:root {
+  --form-element-select-height: var(--sp3);
+  --form-element-select-height--small: var(--sp2-5);
+  --form-element-select-icon: url("../../images/chevron-down.svg");
+  --form-element-select-bg: url("../../images/select-chevron-bg-default.svg");
+  --form-element-select-bg--highlight: url("../../images/select-chevron-bg-highlight.svg");
+  --form-element-select-bg--error: url("../../images/select-chevron-bg-error.svg");
+  --form-element-select-border-size-right: var(--sp3);
+}
+
+select {
+  max-width: 100%;
+  height: var(--form-element-select-height);
+  padding: 0 calc(var(--sp1) + var(--form-element-select-border-size-right)) 0 calc(var(--sp1) + var(--form-element-border-size-left));
+  color: var(--color--gray-10);
+  border-width: var(--form-element-border-size-base) 0;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+  outline: var(--outline--thin);
+  /*
+    Couple of notes here:
+
+    The select element is styled with external images so it's visible in Firefox in Windows high contrast
+    mode. There's a number of browser bugs that limit what we can do including not linear-gradients negating the
+    entire ruleset. To work around this, we split off the various backgrounds into separate SVG images, and
+    call them as appropriate. We cannot use the background CSS property because we split off the background-color.
+    We also cannot use a left border because it angles at the end to blend in with the top and bottom
+    transparent borders, so we re-use the background SVG image for this.
+
+    @todo - look at inlining some of the SVGs with an eye on CSS filesize.
+  */
+  background-color: var(--color--gray-95);
+  background-image: var(--form-element-select-icon), var(--form-element-select-bg), var(--form-element-select-bg);
+  background-repeat: no-repeat;
+  background-position:
+    right var(--sp1) center,
+    right 0 top calc(-1 * var(--form-element-border-size-base)),
+    left -48px top calc(-1 * var(--form-element-border-size-base));
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--form-element-select-height) - 2 * var(--form-element-border-size-base));
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color--blue-70);
+    background-image:
+      var(--form-element-select-icon),
+      var(--form-element-select-bg--highlight),
+      var(--form-element-select-bg--highlight);
+  }
+
+  &:focus {
+    outline: var(--outline--thick);
+    box-shadow: var(--shadow-focusable);
+
+    @supports (outline-style: double) {
+      outline-style: double;
+    }
+  }
+
+  /* Disables border of select specifically for ms browser */
+  &::-ms-expand {
+    display: none;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &[multiple] {
+    height: auto;
+    padding: var(--sp0-5);
+    border-top: 0;
+    border-right: solid 2px transparent;
+    border-bottom: 0;
+    border-left: solid 6px var(--color--gray-30);
+    background-image: none;
+    background-repeat: repeat-y;
+    background-position: left -48px top calc(-1 * var(--form-element-border-size-base));
+    line-height: 1; /* Needed by non-Chromium based MS Edge browsers. */
+
+    option {
+      padding: var(--sp0-5);
+    }
+
+    &:hover,
+    &:focus {
+      border-color: var(--color--blue-70);
+      box-shadow:
+        0 -2px 0 var(--color--blue-70),
+        0 2px 0 var(--color--blue-70);
+    }
+
+    &:focus {
+      box-shadow:
+        0 -2px 0 var(--color--blue-70),
+        0 2px 0 var(--color--blue-70),
+        var(--shadow-focusable);
+    }
+  }
+
+  &.error {
+    background-image:
+      var(--form-element-select-icon),
+      var(--form-element-select-bg--error),
+      var(--form-element-select-bg--error);
+
+    &:hover,
+    &:focus {
+      background-image:
+        var(--form-element-select-icon),
+        var(--form-element-select-bg--highlight),
+        var(--form-element-select-bg--highlight);
+    }
+  }
+
+  &.form-element--small {
+    height: var(--form-element-select-height--small);
+    padding-right: calc(var(--form-element-select-height--small) + var(--sp0-75));
+    padding-left: calc(var(--sp0-75) + var(--form-element-border-size-left));
+    background-position: right var(--sp0-75) center, right -10px top -2px, left -48px top -2px;
+    line-height: calc(var(--form-element-select-height--small) - 2 * var(--form-element-border-size-base));
+  }
+
+  /* Necessary for IE11 to show chevron. */
+  @media screen and (-ms-high-contrast: active) {
+    background-image: var(--form-element-select-icon);
+  }
+}

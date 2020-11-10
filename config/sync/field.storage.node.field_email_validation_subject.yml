@@ -1,0 +1,26 @@
+uuid: f44f791e-c855-40fb-99a5-c621a9a87b62
+langcode: de
+status: true
+dependencies:
+  enforced:
+    module:
+      - spn
+  module:
+    - node
+_core:
+  default_config_hash: SvVo4YQGYzbbTE1sn1VGtB7ACacdULttP-7YfOrWZbo
+id: node.field_email_validation_subject
+field_name: field_email_validation_subject
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

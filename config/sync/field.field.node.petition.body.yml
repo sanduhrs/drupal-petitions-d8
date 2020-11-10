@@ -1,0 +1,28 @@
+uuid: 8689d42b-9ca8-4113-88fe-a850fa890fa5
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.petition
+  enforced:
+    module:
+      - spn
+  module:
+    - text
+_core:
+  default_config_hash: hG5lXYHS5Jis9azs5gSJUWJJzWpgCctME4O8JIxtois
+id: node.petition.body
+field_name: body
+entity_type: node
+bundle: petition
+label: Body
+description: 'Page information for the petition'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

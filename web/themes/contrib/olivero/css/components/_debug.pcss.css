@@ -1,0 +1,75 @@
+/**
+ * @file
+ * Debug styles.
+ */
+
+@import "../base/variables.pcss.css";
+
+.olivero-debug {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  max-width: 100%;
+  padding: var(--sp) var(--sp1-5);
+  user-select: none;
+  color: var(--color--white);
+  border: solid 1px transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  a {
+    color: inherit;
+  }
+
+  label {
+    width: 300px;
+    margin-top: 5px;
+    padding: 5px 0;
+    cursor: pointer;
+    vertical-align: top;
+    font-size: 18px;
+  }
+
+  input[type="checkbox"] {
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .description {
+    margin-top: var(--sp);
+  }
+}
+
+.olivero-debug__row {
+  display: flex;
+}
+
+.olivero-debug__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-indent: -999px;
+  border: 0;
+  background: transparent;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 3px;
+    content: "";
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: var(--color--white);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

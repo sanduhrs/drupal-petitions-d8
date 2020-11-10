@@ -1,0 +1,56 @@
+# Schema for the configuration files of the Olivero theme.
+
+olivero.settings:
+  type: theme_settings
+  label: 'olivero settings'
+  mapping:
+    third_party_settings:
+      type: mapping
+      label: 'Third party settings'
+      mapping:
+        shortcut:
+          type: mapping
+          label: 'Shortcut'
+          mapping:
+            module_link:
+              type: boolean
+              label: 'Module Link'
+    features:
+      type: mapping
+      label: 'Features'
+      mapping:
+        node_user_picture:
+          type: boolean
+          label: "User picture"
+        comment_user_picture:
+          type: boolean
+          label: "Comment user picture"
+        comment_user_verification:
+          type: boolean
+          label: "Comment user verification"
+        favicon:
+          type: boolean
+          label: "Favicon"
+    logo:
+      type: mapping
+      label: 'Features'
+      mapping:
+        use_default:
+          type: boolean
+          label: "Use default"
+    favicon:
+      type: mapping
+      label: 'Features'
+      mapping:
+        use_default:
+          type: boolean
+          label: "Use default"
+    mobile_menu_all_widths:
+      type: integer
+      label: "Mobile menu all widths"
+    site_branding_bg_color:
+      type: string
+      label: "Site branding background color"
+    debug:
+      type: integer
+      label: "Debug"

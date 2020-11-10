@@ -1,0 +1,122 @@
+/**
+ * @file
+ * Button that expands second level nav when clicked.
+ */
+
+@import "../base/variables.pcss.css";
+
+.primary-nav__button-toggle {
+  position: relative;
+  overflow: hidden;
+  width: var(--sp2);
+  height: var(--sp2);
+  margin-top: 2px; /* Visually align button with menu link text. */
+  margin-right: auto; /* Necessary for proper alignment with always-on-mobile in IE11. */
+  padding: 0;
+  cursor: pointer;
+  text-indent: -999px;
+  border: 0;
+  background: transparent;
+  -webkit-appearance: none;
+
+  .icon--menu-toggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    transition: background-color 0.2s;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--sp);
+      height: 0;
+      content: "";
+      transform: translate(-50%, -50%);
+      border-top: solid 3px var(--color--blue-50);
+
+      @media (--nav) {
+        body:not(.is-always-mobile-nav) & {
+          content: none;
+        }
+      }
+    }
+
+    &:after {
+      transition: opacity 0.2s;
+      transform: translate(-50%, -50%) rotate(90deg);
+
+      @media (--nav) {
+        body:not(.is-always-mobile-nav) & {
+          top: calc(50% - 2px);
+          left: 3px;
+          width: 8px;
+          height: 8px;
+          content: "";
+          transform: translateY(-50%) rotate(45deg);
+          opacity: 0.8;
+          border-top: none;
+          border-right: solid 2px currentColor;
+          border-bottom: solid 2px currentColor;
+          background: transparent;
+        }
+      }
+    }
+
+    @media (--nav) {
+      body:not(.is-always-mobile-nav) & {
+        left: 3px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .icon--menu-toggle:after {
+      opacity: 0;
+
+      @media (--nav) {
+        body:not(.is-always-mobile-nav) & {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  /* aria-hidden attribute is removed by JS. Button is non-functional
+     until JS is enabled.
+  */
+  &[aria-hidden="true"] {
+    pointer-events: none;
+  }
+
+  @media (--nav) {
+    body:not(.is-always-mobile-nav) & {
+      flex-shrink: 0;
+      align-self: stretch;
+      width: calc(var(--sp2) + 8px);
+      height: auto;
+      margin-top: 0;
+      margin-right: calc(-1 * var(--sp2));
+
+      &:focus {
+        border: 0;
+        outline: 0;
+
+        .icon--menu-toggle {
+          border: solid 1px transparent;
+          background-color: var(--color--blue-50);
+
+          &:after {
+            border-color: var(--color--white);
+          }
+        }
+      }
+    }
+  }
+}

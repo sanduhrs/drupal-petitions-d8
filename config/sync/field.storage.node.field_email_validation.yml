@@ -1,0 +1,24 @@
+uuid: b6085405-0ad3-40e8-84b6-0e53a5090855
+langcode: de
+status: true
+dependencies:
+  enforced:
+    module:
+      - spn
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: alK4Gtr2Y65CGCiAgAx5GVQtPSTBwqQaWOL4NFjqhzQ
+id: node.field_email_validation
+field_name: field_email_validation
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

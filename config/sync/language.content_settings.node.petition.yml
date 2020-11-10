@@ -1,0 +1,11 @@
+uuid: 54475cdc-8845-4e4a-92b6-4ecdf9164d40
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.petition
+id: node.petition
+target_entity_type_id: node
+target_bundle: petition
+default_langcode: site_default
+language_alterable: false

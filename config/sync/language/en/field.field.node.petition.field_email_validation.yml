@@ -1,0 +1,2 @@
+label: 'Email validation'
+description: 'Email to send to user to validate his signature. Use {_Node-Title_} to get the title of the petition page and {_Validate-Link_} for the validation link.'

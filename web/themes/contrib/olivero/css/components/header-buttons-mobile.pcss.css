@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Header Mobile Buttons.
+ */
+
+@import "../base/variables.pcss.css";
+
+.mobile-buttons {
+  margin-top: var(--sp0-5);
+  margin-left: auto;
+
+  @media (--sm) {
+    margin-top: var(--sp2);
+  }
+
+  @media (--md) {
+    margin-top: var(--sp4);
+  }
+
+  @media (--nav) {
+    margin-top: var(--sp6);
+
+    body:not(.is-always-mobile-nav) & {
+      display: none;
+    }
+  }
+}

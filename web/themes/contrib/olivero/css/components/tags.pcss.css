@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Tag styling for entity references that have entity reference
+ * label formatting.
+ */
+
+@import "../base/variables.pcss.css";
+
+.field--tag-ref {
+  display: flex;
+  margin: var(--sp4) 0;
+  padding: var(--sp1-5) var(--sp2);
+  background-color: var(--color--gray-95);
+  font-family: var(--font-sans);
+}
+
+.field--tag-ref__label {
+  margin: 0 calc(var(--sp1-5) - (var(--sp0-5) / 2)) 0 0;
+  letter-spacing: 0.02em;
+  color: var(--color--gray-20);
+  font-size: var(--font-size-s);
+  font-weight: 600;
+  line-height: 2;
+
+  &:after {
+    content: ":";
+  }
+}
+
+.field--label-inline .field--tag-ref__label {
+  padding: 0;
+}
+
+.field--tag-ref__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((var(--sp0-5) / 2) * -1);
+  padding: 0;
+  list-style: none;
+}
+
+.field--tag-ref__item {
+  display: flex;
+  margin: calc(var(--sp0-5) / 2);
+}
+
+.field--tag-ref__item:nth-last-child(n+2):after {
+  content: ",";
+  color: var(--color--blue-20);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.field--tag-ref__item a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  color: var(--color--blue-20);
+  outline: none;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  line-height: 1.5;
+}

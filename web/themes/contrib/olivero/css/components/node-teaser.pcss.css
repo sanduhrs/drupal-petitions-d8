@@ -1,0 +1,116 @@
+/**
+ * @file
+ * Node Teaser specific styles.
+ */
+
+@import "../base/variables.pcss.css";
+
+.node--view-mode-teaser {
+  position: relative; /* Anchor after pseudo-element. */
+  margin-bottom: var(--sp1-5);
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    width: var(--sp3);
+    height: 0;
+    content: "";
+    border-top: solid 2px var(--color--gray-80);
+  }
+
+  .views-row:last-child & {
+    margin-bottom: 0;
+  }
+
+  .node__meta {
+    margin-bottom: var(--sp);
+
+    a {
+      color: var(--color--blue-20);
+      font-weight: bold;
+    }
+  }
+
+  .node__top-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 0 var(--sp1);
+
+    @media (--lg) {
+      position: relative; /* Anchor the image */
+      margin: 0;
+    }
+  }
+
+  .field--name-field-image {
+    flex-shrink: 0;
+    margin: 0  var(--sp1) 0 0;
+
+    img {
+      width: calc(3.5 * var(--sp));
+      height: calc(3.5 * var(--sp));
+      object-fit: cover;
+      border-radius: 50%;
+
+      @media (--lg) {
+        width: var(--grid-col-width--lg);
+        height: var(--grid-col-width--lg);
+      }
+
+      @media (--nav) {
+        width: var(--grid-col-width--nav);
+        height: var(--grid-col-width--nav);
+      }
+
+      @media (--grid-max) {
+        width: var(--grid-col-width--max);
+        height: var(--grid-col-width--max);
+      }
+    }
+
+    @media (--lg) {
+      position: absolute;
+      top: 0;
+      left: calc(-1 * ((var(--grid-col-width--lg) + var(--grid-gap--lg))));
+    }
+
+    @media (--nav) {
+      left: calc(-1 * ((var(--grid-col-width--nav) + var(--grid-gap--nav))));
+    }
+
+    @media (--grid-max) {
+      left: calc(-1 * ((var(--grid-col-width--max) + var(--grid-gap--max))));
+    }
+
+    @media (--lg) {
+      margin: 0;
+    }
+  }
+
+  .node__title {
+    margin: 0;
+    color: var(--color--gray-0);
+    font-size: 24px;
+    line-height: var(--line-height-base);
+
+    @media (--lg) {
+      margin-bottom: var(--sp1);
+      font-size: var(--sp2);
+      line-height: var(--sp3);
+    }
+  }
+
+  .field--tag-ref {
+    margin: var(--sp1) 0 0;
+    padding: 0;
+    background-color: transparent;
+
+    @media (--lg) {
+      margin: var(--sp2) 0 0;
+    }
+  }
+
+  @media (--lg) {
+    margin-bottom: var(--sp3);
+  }
+}

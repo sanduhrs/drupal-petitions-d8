@@ -1,0 +1,108 @@
+/**
+ * @file
+ * Nav Secondary.
+ */
+
+@import "../base/variables.pcss.css";
+
+.secondary-nav__wrapper {
+  display: flex;
+  margin: var(--sp2) 0;
+
+  @media (--nav) {
+    body:not(.is-always-mobile-nav) & {
+      justify-content: flex-end;
+      margin: 0;
+    }
+  }
+}
+
+.secondary-nav {
+  letter-spacing: 0.02em;
+  font-size: var(--font-size-s);
+  font-weight: 600;
+
+  ul.menu {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      /* Parent element is set to flex-basis: 0. We
+       * don't want text to wrap unless it goes over a
+       * certain arbitrary width.
+      */
+
+      /* @todo should this be scoped to desktop nav? */
+      width: max-content;
+      max-width: 200px;
+
+      &:not(:last-child) {
+        margin-right: var(--sp1-5);
+
+        @media (--nav) {
+          body:not(.is-always-mobile-nav) & {
+            margin-right: var(--sp2);
+          }
+        }
+      }
+    }
+
+    a:not(.button--primary) {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: var(--sp2);
+      text-decoration: none;
+      color: inherit;
+
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        content: "";
+        transition: opacity 0.2s, transform 0.2s;
+        transform: translateY(5px);
+        opacity: 0;
+        border-top: solid 2px currentColor;
+      }
+
+      &:focus,
+      &:hover {
+        &:after {
+          transform: translateY(0);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  @media (--nav) {
+    body:not(.is-always-mobile-nav) & {
+      position: relative;
+      display: flex;
+      margin-left: var(--sp);
+      padding-left: var(--sp2);
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 2px;
+        height: var(--sp2);
+        content: "";
+        transform: translateY(-50%);
+        background-color: var(--color--gray-70);
+      }
+    }
+
+    /* If the secondary nav is the first item within the header, it does not need left separator. */
+    body:not(.is-always-mobile-nav) .secondary-nav__wrapper:first-child &:before {
+      content: none;
+    }
+  }
+}

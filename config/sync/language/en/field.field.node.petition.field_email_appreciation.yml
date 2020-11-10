@@ -1,0 +1,2 @@
+label: 'Email appreciation'
+description: 'Email to send to user to confirm the validation of his signature. Use {_Node-Title_} to get the title and {_Node-URL_} to get the link to the petition page.'

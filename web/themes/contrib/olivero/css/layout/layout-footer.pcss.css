@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Grid system definition for the footer top and footer bottom layouts.
+ */
+
+@import "../base/variables.pcss.css";
+
+.site-footer__inner {
+  padding-top: var(--sp2);
+  padding-bottom: var(--sp2);
+
+  @media (--nav) {
+    padding-top: var(--sp4);
+    padding-bottom: calc(13 * var(--sp));
+  }
+}
+
+.region--footer_top__inner,
+.region--footer_bottom__inner {
+  > * {
+    margin-bottom: var(--sp2);
+
+    @media (--md) {
+      flex: 1;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: var(--sp2);
+      }
+    }
+  }
+
+  @media (--md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

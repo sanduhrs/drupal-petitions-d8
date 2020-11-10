@@ -1,0 +1,104 @@
+/**
+ * @file
+ * Nav Button Wide.
+ */
+
+@import "../base/variables.pcss.css";
+
+.nav-primary__button {
+  display: none;
+
+  @media (--nav) {
+    display: flex;
+    visibility: hidden;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: var(--content-left);
+    height: calc(6 * var(--sp));
+    cursor: pointer;
+    pointer-events: auto;
+    border: 0;
+    outline: 0;
+    background-color: var(--color--blue-50);
+
+    &:focus {
+      border: solid 1px transparent; /* Will show in IE/Edge high contrast mode. */
+    }
+
+    body:not(.is-always-mobile-nav) .js-fixed & {
+      visibility: visible;
+    }
+
+    body.is-always-mobile-nav & {
+      visibility: hidden;
+    }
+  }
+}
+
+.nav-primary__icon {
+  position: relative;
+  width: var(--sp2);
+  height: 21px;
+  transition: transform 1s;
+  transition: all 0.2s;
+  pointer-events: none;
+  opacity: 0;
+  transform-style: preserve-3d;
+
+  .js-fixed & {
+    opacity: 1;
+  }
+
+  [aria-expanded="true"] & {
+    > div:nth-child(1) {
+      top: 9px;
+      transform: rotate(-45deg);
+    }
+
+    > div:nth-child(2) {
+      opacity: 0;
+    }
+
+    > div:nth-child(3) {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+  }
+
+  > div {
+    height: 0;
+    border-top: solid 3px var(--color--white);
+
+    &:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transition: all 0.2s;
+      background-color: var(--color--white);
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transition: opacity 0.2s;
+      background-color: var(--color--white);
+    }
+
+    &:nth-child(3) {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      transition: all 0.2s;
+      background-color: var(--color--white);
+    }
+  }
+}

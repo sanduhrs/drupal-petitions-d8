@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Theme override for a views mini-pager.
+ *
+ * Available variables:
+ * - heading_id: Pagination heading ID.
+ * - items: List of pager items.
+ *
+ * @see template_preprocess_views_mini_pager()
+ */
+#}
+{% if items.previous or items.next %}
+  <nav class="pager" role="navigation" aria-labelledby="{{ heading_id }}">
+    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <ul class="pager__items js-pager__items">
+      {# Print previous item if we are not on the first page. #}
+      {% if items.previous %}
+        {% spaceless %}
+          <li class="pager__item pager__item--control pager__item--previous">
+            <a href="{{ items.previous.href }}" class="pager__link" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel', 'class') }}>
+              <span class="visually-hidden">{{ 'Previous page'|t }}</span>
+              <svg class="pager__item-icon pager__item-icon--previous" width="11" height="16" viewBox="0 0 11 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.11201 7.19126L9.41183 1.15503C10.0728 0.674329 11 1.14648 11 1.96377V14.0362C11 14.8535 10.0728 15.3257 9.41183 14.845L1.11201 8.80874C0.562908 8.40939 0.562907 7.59061 1.11201 7.19126Z"/>
+              </svg>
+            </a>
+          </li>
+        {% endspaceless %}
+      {% endif %}
+
+      {# Print current active page. #}
+      {% if items.current %}
+        <li class="pager__item pager__item--active">
+          {{ items.current }}
+        </li>
+      {% endif %}
+
+      {# Print next item if we are not on the last page. #}
+      {% if items.next %}
+        {% spaceless %}
+          <li class="pager__item pager__item--control pager__item--next">
+            <a href="{{ items.next.href }}" class="pager__link" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+              <span class="visually-hidden">{{ 'Previous page'|t }}</span>
+              <svg class="pager__item-icon pager__item-icon--next" width="11" height="16" viewBox="0 0 11 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.88799 8.80874L1.58817 14.845C0.927202 15.3257 0 14.8535 0 14.0362L0 1.96377C0 1.14648 0.927202 0.674329 1.58817 1.15503L9.88799 7.19126C10.4371 7.59061 10.4371 8.40939 9.88799 8.80874Z"/>
+              </svg>
+            </a>
+          </li>
+        {% endspaceless %}
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

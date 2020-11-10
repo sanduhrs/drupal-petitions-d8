@@ -1,0 +1,100 @@
+/**
+ * @file
+ * Embedded Media.
+ */
+
+@import "../base/variables.pcss.css";
+
+figure {
+  background: var(--color--gray-95);
+}
+
+figcaption {
+  padding: var(--sp0-5);
+  color: var(--color--gray-10);
+  background: var(--color--gray-95);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  line-height: var(--sp);
+
+  @media (--sm) {
+    padding: var(--sp);
+  }
+}
+
+.align-right {
+  float: none; /* Override core's align.module.css. */
+  max-width: 100%;
+  margin: var(--sp3) 0;
+
+  /* Pull out of grid if nested in content narrow layout. */
+  .layout--content-narrow &,
+  .layout--pass--content-narrow > * & {
+    @media (--grid-md) {
+      margin-right: calc(-1 * ((var(--grid-col-width--md) + var(--grid-gap--md))));
+    }
+
+    @media (--lg) {
+      margin-right: calc(-2 * ((var(--grid-col-width--lg) + var(--grid-gap--lg))));
+    }
+
+    @media (--nav) {
+      margin-right: calc(-3 * ((var(--grid-col-width--nav) + var(--grid-gap--nav))));
+    }
+
+    @media (--grid-max) {
+      margin-right: calc(-3 * ((var(--grid-col-width--max) + var(--grid-gap--max))));
+    }
+  }
+
+  @media (--grid-md) {
+    float: right;
+    max-width: 50%;
+    margin: var(--sp) 0 var(--sp) var(--sp);
+  }
+}
+
+.align-left {
+  float: none; /* Override core's align.module.css. */
+  max-width: 100%;
+  margin: var(--sp3) 0;
+
+  /* Pull out of grid if nested in content narrow layout. */
+  .layout--content-narrow &,
+  .layout--pass--content-narrow > * & {
+    @media (--grid-md) {
+      margin-left: calc(-1 * ((var(--grid-col-width--md) + var(--grid-gap--md))));
+    }
+
+    @media (--lg) {
+      margin-left: calc(-1 * ((var(--grid-col-width--lg) + var(--grid-gap--lg))));
+    }
+
+    @media (--nav) {
+      margin-left: calc(-1 * ((var(--grid-col-width--nav) + var(--grid-gap--nav))));
+    }
+
+    @media (--grid-max) {
+      margin-left: calc(-1 * ((var(--grid-col-width--max) + var(--grid-gap--max))));
+    }
+  }
+
+  @media (--grid-md) {
+    float: left;
+    max-width: 50%;
+    margin: var(--sp) var(--sp2) var(--sp) 0; /* Extra right margins in case of aligning next to lists. */
+  }
+}
+
+.align-center img,
+.align-center video,
+.align-center audio {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.media-oembed-content {
+  display: block;
+  max-width: 100%;
+}

@@ -1,0 +1,114 @@
+/**
+ * @file
+ * Buttons.
+ */
+
+@import "../base/variables.pcss.css";
+
+:root {
+  --button-border-width: var(--form-element-border-size-base);
+}
+
+.button {
+  display: inline-block;
+  height: var(--sp3);
+  margin: var(--sp1) var(--sp1) var(--sp1) 0;
+  padding: calc((var(--sp3) - var(--line-height-s)) / 2) var(--sp1-5);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color--blue-20);
+  border: var(--button-border-width) solid var(--color--blue-20);
+  border-radius: var(--border-radius-base);
+  background-color: var(--color--white);
+  font-family: inherit;
+  font-size: var(--font-size-s);
+  font-weight: 700;
+  line-height: var(--line-height-s);
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: var(--color--blue-50);
+    border-color: var(--color--blue-50);
+  }
+
+  &:focus {
+    outline: var(--outline--base);
+    outline-offset: var(--outline-offset);
+    box-shadow: var(--shadow-focusable-with-outline);
+  }
+
+  &:active {
+    color: var(--color--blue-20);
+    border-color: var(--color--blue-20);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    color: var(--color--gray-70);
+    border-color: var(--color--gray-70);
+  }
+
+  /* No margin if is part of a menu. */
+  .menu & {
+    margin: 0;
+  }
+
+  /*
+    IE11 doesn't work properly on button elements so we only do
+    inline-flex on modern browsers.
+  */
+  @supports (display: inline-flex) {
+    display: inline-flex;
+    align-items: center;
+
+    /* Top padding accounts for font not being vertically centered within line-height. */
+    padding: 1px var(--sp1-5) 0;
+    line-height: var(--line-height-s);
+  }
+}
+
+.button--small {
+  height: var(--sp2-5);
+  padding: calc((var(--sp2-5) - var(--line-height-s)) / 2) var(--sp1-5);
+}
+
+.button--primary {
+  color: var(--color--white);
+  background-color: var(--color--blue-20);
+
+  &:hover,
+  &:focus {
+    color: var(--color--white);
+    background-color: var(--color--blue-50);
+  }
+
+  &:active {
+    color: var(--color--white);
+    background-color: var(--color--blue-20);
+  }
+
+  &:disabled,
+  &.is-disabled {
+    color: var(--color--white);
+    background-color: var(--color--gray-70);
+  }
+}
+
+.button--icon-back {
+  &:before {
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.5em;
+    content: "";
+    transform: rotate(45deg);
+    border-bottom: solid 2px currentColor;
+    border-left: solid 2px currentColor;
+  }
+}

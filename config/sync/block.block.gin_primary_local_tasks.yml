@@ -1,0 +1,22 @@
+uuid: 864b93b9-501e-4397-b7a0-2badc4f4a20b
+langcode: de
+status: true
+dependencies:
+  theme:
+    - gin
+_core:
+  default_config_hash: Hh01DLj9k7UnNdPpOQXHZHW7GHf2OPNDQyCJF7_R9ac
+id: gin_primary_local_tasks
+theme: gin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primäre Reiter'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

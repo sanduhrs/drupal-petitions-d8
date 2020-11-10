@@ -1,0 +1,16 @@
+spn.validate_signature:
+  path: '/petition/node/{token}/{nid}'
+  defaults:
+    _controller: '\Drupal\spn\Controller\SignatureValidation::validate'
+    _title: 'Validate petition signature'
+  requirements:
+    _permission: 'access content'
+spn.spn_notifications_form:
+  path: '/admin/config/spn/notifications'
+  defaults:
+    _form: '\Drupal\spn\Form\NotificationsForm'
+    _title: 'Manage notifications'
+  requirements:
+    _permission: 'administer nodes'
+  options:
+    _admin_route: TRUE

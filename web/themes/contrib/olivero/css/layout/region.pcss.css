@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Region default layout.
+ */
+
+@import "../base/variables.pcss.css";
+
+.region > * {
+  margin-bottom: var(--sp);
+
+  @media (--md) {
+    margin-bottom: var(--sp2);
+  }
+
+  @media (--lg) {
+    margin-bottom: var(--sp3);
+  }
+}

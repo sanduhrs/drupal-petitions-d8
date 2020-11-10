@@ -1,0 +1,28 @@
+uuid: 06d2b04a-f69f-44d8-a518-37cc8078e1fe
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_appreciation
+    - node.type.petition
+  enforced:
+    module:
+      - spn
+  module:
+    - text
+_core:
+  default_config_hash: 1qd6d4O3WqFh1VJ4D28rv5a_v8v0Eb9zDNf8PjVZovQ
+id: node.petition.field_email_appreciation
+field_name: field_email_appreciation
+entity_type: node
+bundle: petition
+label: 'Email appreciation'
+description: 'Email to send to user to confirm the validation of his signature. Use {_Node-Title_} to get the title and {_Node-URL_} to get the link to the petition page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,76 @@
+/**
+ * @file
+ * Social Bar Region
+ .
+ */
+
+@import "../base/variables.pcss.css";
+
+.social-bar {
+  @media (--nav) {
+    flex-shrink: 0;
+    width: var(--content-left);
+    background-color: var(--color--gray-95);
+  }
+}
+
+.social-bar__inner {
+  position: relative;
+  padding: var(--sp0-5) var(--sp);
+
+  @media (--nav) {
+    position: relative;
+    width: var(--content-left);
+    padding: calc(5 * var(--sp)) 0;
+
+    &.js-fixed {
+      position: fixed;
+      top: var(--sp6);
+      left: 0;
+      height: calc(100vh - 6 * var(--sp));
+    }
+  }
+}
+
+.rotate {
+  > * {
+    margin-bottom: var(--sp2);
+
+    @media (--nav) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-right: var(--sp2);
+      }
+    }
+  }
+
+  .contextual {
+    @media (--nav) {
+      right: auto;
+      left: 100%;
+      transform: rotate(90deg);
+      transform-origin: top left;
+
+      .trigger {
+        float: left;
+      }
+    }
+  }
+
+  @media (--nav) {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vh;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: left;
+
+    @supports (width: max-content) {
+      width: max-content;
+    }
+  }
+}

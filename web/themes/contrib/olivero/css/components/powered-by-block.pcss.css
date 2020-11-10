@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Powered by block specific styles.
+ */
+
+@import "../base/variables.pcss.css";
+
+.block-system-powered-by-block {
+  letter-spacing: 0.02em;
+  color: var(--color--gray-25);
+  font-size: 14px;
+  line-height: var(--sp);
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    .site-footer & {
+      color: var(--color--white);
+    }
+  }
+
+  svg {
+    display: inline-block;
+    margin-top: calc(-1 * var(--sp) / 4);
+    margin-left: calc(var(--sp) / 4);
+    vertical-align: middle;
+    fill: currentColor;
+
+    .site-footer & {
+      fill: var(--color--white);
+    }
+  }
+}

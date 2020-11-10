@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Content region layout.
+ */
+
+@import "../base/variables.pcss.css";
+
+.region--content {
+  margin-bottom: var(--sp);
+
+  @media (--md) {
+    margin-bottom: var(--sp2);
+  }
+
+  @media (--lg) {
+    margin-bottom: var(--sp3);
+  }
+}

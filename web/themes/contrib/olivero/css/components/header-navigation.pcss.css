@@ -1,0 +1,124 @@
+/**
+ * @file
+ * Navigation in header.
+ */
+
+@import "../base/variables.pcss.css";
+
+.header-nav {
+  position: fixed;
+  z-index: 5; /* appear above overlay */
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  overflow: auto;
+  /* Ensure that header nav not use additional space and force
+     system branding block text to unnecessarily wrap. */
+  flex-basis: 0;
+  flex-grow: 1; /* Necessary for IE11. */
+  width: 100%;
+  max-width: var(--mobile-nav-width);
+  height: 100%;
+  padding: 0 var(--sp) var(--sp);
+  transition: all 0.2s;
+  transform: translateX(101%);
+  border-top: solid var(--color--white) var(--sp3); /* Create room for the "close" button. */
+  background-color: var(--color--white);
+  box-shadow: 0 0 72px rgba(0, 0, 0, 0.1);
+
+  /* Toolbar is fixed, and tray is vertical. */
+  body.toolbar-vertical & {
+    border-top-width: calc(var(--toolbar-height) + var(--sp3));
+  }
+
+  &.is-active {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  @supports (flex-basis: max-content) {
+    flex-basis: max-content;
+  }
+
+  @media (--sm) {
+    border-top-width: var(--sp5);
+
+    /* Toolbar is fixed, and tray is vertical. */
+    body.toolbar-vertical & {
+      border-top-width: calc(var(--toolbar-height) + var(--sp5));
+    }
+  }
+
+  @media (--md) {
+    padding-bottom: var(--sp3);
+    padding-left: var(--sp3);
+    border-top-width: var(--sp7);
+
+    /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
+    body.toolbar-vertical &,
+    body.toolbar-horizontal.toolbar-fixed & {
+      border-top-width: calc(var(--toolbar-height) + var(--sp7));
+    }
+
+    /* Toolbar is horizontal fixed, and tray is open. */
+    body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open & {
+      border-top-width: calc(var(--toolbar-height) + var(--toolbar-tray-height) + var(--sp7));
+    }
+  }
+
+  @media (--lg) {
+    grid-column: 5 / 14;
+  }
+
+  @media (--nav) {
+    body:not(.is-always-mobile-nav) & {
+      position: static;
+      display: flex;
+      visibility: visible;
+      overflow: visible;
+      grid-column: 5 / 15;
+      align-items: center;
+      justify-content: flex-end;
+      max-width: none;
+      height: var(--header-height-wide-when-fixed);
+      margin-top: auto;
+      padding: 0;
+      transition: transform 0.2s;
+      transform: none;
+      border-top: 0;
+      box-shadow: none;
+    }
+
+    body.is-always-mobile-nav & {
+      right: auto;
+      left: 100vw;
+      overflow: auto;
+      max-width: calc((7 * (var(--grid-col-width--nav) + var(--grid-gap--nav))));
+      padding-right: var(--sp);
+      transition: transform 0.2s, visibility 0.2s;
+      border-top-width: var(--sp11);
+
+      &.is-active {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Toolbar is fixed, and tray is vertical or toolbar is horizontal and tray is closed. */
+    body.is-always-mobile-nav.toolbar-vertical &,
+    body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed & {
+      border-top-width: calc(var(--toolbar-height) + var(--sp11));
+    }
+
+    /* Toolbar is horizontal fixed, and tray is open. */
+    body.is-always-mobile-nav.toolbar-horizontal.toolbar-fixed.toolbar-tray-open & {
+      border-top-width: calc(var(--toolbar-height) + var(--toolbar-tray-height) + var(--sp11));
+    }
+  }
+
+  @media (--grid-max) {
+    body.is-always-mobile-nav & {
+      max-width: calc(100vw - (var(--max-width) + var(--content-left)) + ((7 * (var(--grid-col-width--max) + var(--grid-gap--max)))));
+      padding-right: calc(100vw - (var(--max-width) + var(--content-left) - var(--sp)));
+    }
+  }
+}

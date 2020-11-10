@@ -1,0 +1,90 @@
+/**
+ * @file
+ * Book module styling.
+ */
+
+@import "../base/variables.pcss.css";
+
+.book-pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 var(--sp);
+  padding: 0 0 var(--sp);
+  list-style: none;
+  border-bottom: solid 1px var(--color--blue-20);
+
+  a {
+    text-decoration: none;
+    color: var(--color--blue-20);
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.book-pager__item {
+  display: inline-block;
+
+  @media (--sm) {
+    flex: 0 0 33.33%;
+  }
+}
+
+.book-pager__item--center {
+  @media (--sm) {
+    text-align: center;
+  }
+}
+
+.book-pager__item--next {
+  @media (--sm) {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.book-pager__link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.book-pager__link--previous {
+  &:before {
+    display: block;
+    width: var(--sp0-5);
+    height: var(--sp0-5);
+    margin-right: 0.25em;
+    content: "";
+    transform: rotate(-45deg);
+    border-top: solid 3px currentColor;
+    border-left: solid 3px currentColor;
+  }
+}
+
+.book-pager__link--next {
+  &:after {
+    display: block;
+    width: var(--sp0-5);
+    height: var(--sp0-5);
+    margin-left: 0.25em;
+    content: "";
+    transform: rotate(135deg);
+    border-top: solid 3px currentColor;
+    border-left: solid 3px currentColor;
+  }
+}
+
+.book-navigation {
+  .menu {
+    margin: var(--sp2) 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}

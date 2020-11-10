@@ -1,0 +1,20 @@
+/**
+ * @file
+ * Styles for views.
+ */
+
+@import "../base/variables.pcss.css";
+
+.view {
+  > * {
+    margin-bottom: var(--sp2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (--md) {
+      margin-bottom: var(--sp3);
+    }
+  }
+}

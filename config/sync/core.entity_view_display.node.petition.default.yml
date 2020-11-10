@@ -1,0 +1,82 @@
+uuid: 6f743660-e1b9-4e4a-88f3-3bdce06e5e4e
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.petition.body
+    - field.field.node.petition.field_email_appreciation
+    - field.field.node.petition.field_email_appreciation_subject
+    - field.field.node.petition.field_email_validation
+    - field.field.node.petition.field_email_validation_subject
+    - node.type.petition
+  enforced:
+    module:
+      - spn
+  module:
+    - layout_builder
+    - layout_discovery
+    - spn
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          1198c907-af4b-4efc-aafb-b133f8eaab05:
+            uuid: 1198c907-af4b-4efc-aafb-b133f8eaab05
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:petition:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          307cc795-98df-484f-babc-61b1bd79364f:
+            uuid: 307cc795-98df-484f-babc-61b1bd79364f
+            region: content
+            configuration:
+              id: petition_form_block
+              label: 'Jetzt unterschreiben!'
+              provider: spn
+              label_display: visible
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+_core:
+  default_config_hash: 9vUWDp6GSDEFA3VLxv7MK7ZyHJwohKMhGCd0RSCtXkw
+id: node.petition.default
+targetEntityType: node
+bundle: petition
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_email_appreciation: true
+  field_email_appreciation_subject: true
+  field_email_validation: true
+  field_email_validation_subject: true
+  langcode: true

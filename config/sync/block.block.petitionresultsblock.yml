@@ -1,0 +1,28 @@
+uuid: 8c3bd245-8faa-4dc5-9fd3-60d27be9ec4e
+langcode: de
+status: true
+dependencies:
+  module:
+    - node
+    - spn
+  theme:
+    - olivero
+id: petitionresultsblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: spn_results
+settings:
+  id: spn_results
+  label: 'Petition Results Block'
+  provider: spn
+  label_display: visible
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      petition: petition
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,86 @@
+/**
+ * @file
+ * Main Header.
+ */
+
+@import "../base/variables.pcss.css";
+
+/* Header */
+.site-header {
+  position: relative;
+
+  @media (--nav) {
+    /* Necessary to keep the content from jumping up when header transitions to fixed. */
+    min-height: var(--sp10);
+    border-bottom: solid 1px transparent; /* Will show in Windows high contrast mode. */
+  }
+}
+
+.header__left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  align-self: stretch;
+  background-color: var(--color--blue-50);
+}
+
+.site-header__fixable {
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.5s;
+
+  &.js-fixed {
+    @media (--nav) {
+      &:not(.is-expanded) {
+        pointer-events: none;
+      }
+
+      body:not(.is-always-mobile-nav) & {
+        position: fixed;
+        z-index: 2; /* Appear above body content that is position: relative */
+        top: calc(-1 * var(--sp4));
+        max-width: var(--max-bg-color);
+      }
+
+      /* Toolbar is fixed, and tray is either vertical or closed and horizontal. */
+      body.toolbar-vertical.toolbar-fixed:not(.is-always-mobile-nav) &,
+      body.toolbar-horizontal.toolbar-fixed:not(.is-always-mobile-nav) & {
+        top: calc(var(--toolbar-height) - var(--sp4));
+      }
+
+      /* Toolbar is fixed, and tray is open and horizontal. */
+      body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open:not(.is-always-mobile-nav) & {
+        top: calc(var(--toolbar-tray-height) + var(--toolbar-height) - var(--sp4));
+      }
+    }
+  }
+}
+
+.site-header__inner {
+  flex-grow: 1;
+  width: calc(100vw - var(--content-left));
+  transition: all 0.3s;
+  background: var(--color--white);
+
+  .site-header__fixable.js-fixed & {
+    @media (--nav) {
+      box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  /* Hide the desktop nav when it's fixed and not active. */
+  .site-header__fixable.js-fixed:not(.is-expanded) & {
+    @media (--nav) {
+      body:not(.is-always-mobile-nav) & {
+        transform: translateX(-101%);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.site-header__inner__container {
+  display: flex;
+  justify-content: space-between;
+}

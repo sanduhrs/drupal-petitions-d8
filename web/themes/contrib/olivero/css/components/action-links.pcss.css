@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Styles for action links.
+*/
+@import "../base/variables.pcss.css";
+
+.action-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: var(--color--blue-20);
+    }
+  }
+}
+
+.action-links-item {
+  display: inline-block;
+}

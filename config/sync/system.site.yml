@@ -1,0 +1,14 @@
+uuid: bc41e6e3-5890-40bc-aa48-e97b9a208538
+name: '!'
+mail: no-reply@waldorf.one
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: de
+default_langcode: de
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

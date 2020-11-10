@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Node preview container styling.
+ */
+
+@import "../base/variables.pcss.css";
+
+.node-preview-container {
+  padding: 0 var(--sp0-5);
+  background: var(--color--white);
+  box-shadow: -36px 1px 36px rgba(0, 0, 0, 0.08);
+
+  body.toolbar-vertical.toolbar-tray-open & {
+    max-width: calc(100vw - var(--toolbar-tray-vertical-width) - var(--scrollbar-width));
+  }
+}
+
+.node-preview-form-select {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.node-preview-backlink {
+  margin: var(--sp0-5) auto var(--sp0-5) 0;
+}

@@ -1,0 +1,18 @@
+/*
+ * @file
+ * Provides default layout styles for all layout sections.
+ */
+
+@import "../base/variables.pcss.css";
+
+.layout {
+  margin-bottom: var(--sp);
+
+  @media (--md) {
+    margin-bottom: var(--sp2);
+  }
+
+  @media (--lg) {
+    margin-bottom: var(--sp3);
+  }
+}

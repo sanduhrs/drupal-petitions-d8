@@ -1,0 +1,229 @@
+/**
+ * @file
+ * Comment section and individual comments.
+ */
+
+@import "../base/variables.pcss.css";
+
+:root {
+  --comment-indentation: var(--sp2);
+  --comment-indentation--md: var(--sp4);
+}
+
+.comments {
+  > .comment {
+    border-top: 2px solid var(--color--gray-80);
+
+    ~ .comment {
+      margin-top: var(--sp2);
+    }
+  }
+}
+
+.comments__title {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+.comments__count {
+  position: relative;
+  display: inline-block;
+  min-width: 34px;
+  margin: 0 var(--sp) var(--sp0-5) var(--sp);
+  padding: 0 5px;
+  text-align: center;
+  color: var(--color--white);
+  border-radius: 2px;
+  background-color: var(--color--blue-20);
+  font-size: 11px;
+  line-height: 21px;
+
+  &:after {
+    position: absolute;
+    bottom: -7px;
+    left: 8px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 7px solid var(--color--blue-20);
+    border-right: 8px solid transparent;
+  }
+}
+
+.comment-form {
+  padding-bottom: var(--sp2);
+}
+
+.add-comment__form {
+  padding-left: var(--sp3);
+
+  @media (--grid-md) {
+    padding-left: 0;
+  }
+}
+
+.comment {
+  position: relative;
+  padding-top: var(--sp2);
+  padding-left: var(--sp3);
+
+  .text-content {
+    padding-bottom: 0;
+    font-size: 16px;
+  }
+
+  .links {
+    margin: var(--sp) 0 0 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: var(--color--blue-20);
+      font-size: 14px;
+      font-weight: bold;
+      line-height: var(--sp);
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    li {
+      display: inline-block;
+      margin-right: var(--sp);
+    }
+  }
+
+  @media (--grid-md) {
+    padding-left: 0;
+  }
+}
+
+.add-comment__picture-wrapper.comment-picture {
+  top: calc(var(--line-height-base) + var(--sp0-5));
+}
+
+.comment-picture__image {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  width: var(--sp2);
+  height: var(--sp2);
+  border-radius: 50%;
+  background-color: var(--color--gray-80);
+
+  .indented & {
+    @media (--grid-md) {
+      left: calc(-1 * var(--sp4));
+      width: var(--sp2);
+      height: var(--sp2);
+    }
+  }
+
+  *:not(img) {
+    display: inherit;
+    width: inherit;
+    height: inherit;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* @TODO: create image-style for profile's avatar to have image squared by default. */
+    @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (--grid-md) {
+    left: calc(-1 * var(--sp5));
+    width: var(--sp3);
+    height: var(--sp3);
+  }
+
+  @media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    position: relative;
+  }
+}
+
+.comment__meta {
+  * {
+    display: inline;
+  }
+}
+
+.comment__author {
+  margin-right: var(--sp);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: var(--sp);
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.comment__time {
+  margin: 0;
+  color: var(--color--gray-20);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: var(--sp);
+}
+
+.indented {
+  margin-left: var(--comment-indentation);
+
+  > .comment:not(:last-of-type):not(.has-children):before {
+    position: absolute;
+    top: var(--sp2); /* Comment's padding-top */
+    left: calc(-1 * var(--comment-indentation) - var(--sp));
+    width: 0;
+    height: 100%;
+    content: "";
+    border-left: solid 1px var(--color--gray-80);
+
+    @media (--md) {
+      left: calc(-1 * var(--comment-indentation--md) + var(--sp));
+    }
+  }
+
+  @media (--md) {
+    margin-left: var(--comment-indentation--md);
+  }
+}
+
+.show-hide-btn {
+  margin: var(--sp2) 0 0 var(--sp3);
+  padding: 0;
+  cursor: pointer;
+  color: var(--color--gray-10);
+  border: 0;
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  appearance: none;
+
+  &[aria-expanded="true"]:after {
+    content: "\0020 -";
+  }
+
+  &[aria-expanded="false"]:after {
+    content: "\0020 +";
+  }
+
+  @media (--grid-md) {
+    margin-left: 0;
+  }
+}

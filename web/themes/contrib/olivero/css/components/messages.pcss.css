@@ -1,0 +1,141 @@
+/**
+ * @file
+ * Messages.
+ */
+
+@import "../base/variables.pcss.css";
+
+:root {
+  --messages-icon-size: 32px;
+}
+
+.messages-list {
+  margin-top: var(--sp1);
+  margin-bottom: var(--sp1);
+  padding: 0;
+  list-style: none;
+}
+
+.messages {
+  min-height: calc(var(--messages-icon-size) + 2 * var(--sp1));
+  padding: var(--sp1) var(--sp1-5);
+  outline: solid 1px transparent;
+  background-color: var(--color--gray-0);
+
+  /* Additional specificity to override contrib modules. */
+  &.messages-list__item {
+    background-image: none;
+  }
+}
+
+.messages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages:not(.hidden) ~ .messages {
+  margin-top: var(--sp1);
+}
+
+.messages__item + .messages__item {
+  margin-top: var(--sp0-5);
+}
+
+.messages__container {
+  display: flex;
+}
+
+.messages__header {
+  flex-shrink: 0;
+  margin-right: var(--sp1);
+}
+
+.messages__content {
+  flex: 1;
+  padding-top: 3px;
+  color: var(--color--white);
+
+  * {
+    color: inherit;
+  }
+}
+
+.messages__button {
+  flex-shrink: 0;
+  margin-left: var(--sp1);
+  padding-top: 3px;
+}
+
+.messages__close {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: top;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  appearance: none;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 33px;
+    height: 2px;
+    content: "";
+    background-color: var(--color--gray-30);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      background-color: var(--color--white);
+    }
+  }
+
+  &:focus {
+    outline: 2px solid var(--color--blue-70);
+    outline-offset: 1px;
+  }
+}
+
+.messages__icon {
+  vertical-align: top;
+}
+
+.messages--error .messages__icon {
+  fill: var(--color--red);
+}
+
+.messages--warning .messages__icon {
+  fill: var(--color--gold);
+}
+
+.messages--status .messages__icon {
+  fill: var(--color--green);
+}
+
+.messages--info .messages__icon {
+  fill: var(--color--blue-70);
+}
+
+.messages a {
+  color: var(--color--white);
+}
+
+.messages pre {
+  margin: 0;
+}

@@ -1,0 +1,135 @@
+/**
+ * @file
+ * CKE Dialogs.
+ */
+
+@import "../base/variables.pcss.css";
+
+:root {
+  --form-element-select-icon: url("../../images/chevron-down.svg");
+  --form-element-select-bg: url("../../images/select-chevron-bg-default.svg");
+  --form-element-select-bg--highlight: url("../../images/select-chevron-bg-highlight.svg");
+}
+
+.cke_dialog {
+  td,
+  th {
+    padding: var(--sp0-25);
+  }
+
+  .cke_dialog_ui_hbox_last {
+    padding: 1px 0 0 0;
+  }
+
+  .cke_dialog_contents_body .cke_dialog_ui_text,
+  .cke_dialog_contents_body .cke_dialog_ui_select,
+  .cke_dialog_contents_body .cke_dialog_ui_hbox_last > a.cke_dialog_ui_button {
+    margin-top: var(--sp0-5);
+  }
+
+  .cke_dialog_body label + .cke_dialog_ui_labeled_content {
+    width: 100% !important; /* Override inline width. */
+  }
+
+  input.cke_dialog_ui_input_text,
+  input.cke_dialog_ui_input_password,
+  input.cke_dialog_ui_input_tel,
+  textarea.cke_dialog_ui_input_textarea {
+    padding:
+      calc((var(--sp3) - (var(--font-size-base) * 1.5) - (var(--form-element-border-size-base) * 2)) / 2)
+      calc(var(--sp1) + var(--form-element-border-size-base))
+      calc((var(--sp3) - (var(--font-size-base) * 1.5) - (var(--form-element-border-size-base) * 2)) / 2)
+      calc(var(--sp1) + var(--form-element-border-size-left));
+    color: var(--color--gray-10);
+    border-width: var(--form-element-border-size-base) 0;
+
+    &:hover {
+      border-width: var(--form-element-border-size-base) 0;
+    }
+  }
+
+  .cke_dialog_ui_input_select {
+    display: block;
+
+    select,
+    .cke_dialog_ui_input_select {
+      width: 100% !important;
+      height: var(--sp2-5);
+      margin: 0;
+      padding: 0 calc(var(--sp2-5) + var(--sp0-75)) 0 calc(var(--sp0-75) + var(--form-element-border-size-left));
+      color: var(--color--gray-10);
+      border: 1px solid transparent;
+      border-width: var(--form-element-border-size-base) 0;
+      border-style: solid;
+      border-color: transparent;
+      border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+      outline: var(--outline--thin);
+      background-color: var(--color--gray-95);
+      line-height: var(--sp2-5);
+
+      &:hover,
+      &:focus {
+        border-color: var(--color--blue-70);
+        background-image:
+          var(--form-element-select-icon),
+          var(--form-element-select-bg--highlight),
+          var(--form-element-select-bg--highlight);
+      }
+
+      &:focus {
+        outline: var(--outline--thick);
+      }
+    }
+  }
+
+  .cke_dialog_footer_buttons {
+    margin: var(--sp0-5) var(--sp0-5) var(--sp0-5) 0;
+
+    .cke_dialog_ui_hbox_last {
+      padding: var(--sp0-25);
+    }
+
+    a,
+    .acke_dialog_ui_button {
+      display: inline-block;
+      margin: var(--sp0-25) var(--sp0-25) var(--sp0-25) 0;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      color: var(--color--blue-20);
+      border: var(--form-element-border-size-base) solid var(--color--blue-20);
+      border-radius: var(--border-radius-base);
+      background-color: var(--color--white);
+      font-family: inherit;
+      font-size: var(--font-size-s);
+      font-weight: 700;
+      line-height: var(--line-height-s);
+      appearance: none;
+      -webkit-font-smoothing: antialiased;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: var(--color--blue-50);
+        border-color: var(--color--blue-50);
+      }
+
+      &:focus {
+        outline: var(--outline--base);
+        outline-offset: var(--outline-offset);
+        box-shadow: var(--shadow-focusable-with-outline);
+      }
+
+      &.cke_dialog_ui_button_ok {
+        color: var(--color--white);
+        background-color: var(--color--blue-20);
+
+        &:hover,
+        &:focus {
+          color: var(--color--white);
+          background-color: var(--color--blue-50);
+        }
+      }
+    }
+  }
+}
