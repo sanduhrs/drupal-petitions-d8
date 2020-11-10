@@ -16,3 +16,30 @@ dependencies:
   - drupal:system
 
 configure: spn.settings
+
+
+Hostname:   getenv('CLOUDRON_MAIL_SMTP_SERVER')      mail
+Port:       getenv('CLOUDRON_MAIL_SMTP_PORT')        2525
+TLS Port:   getenv('CLOUDRON_MAIL_SMTPS_PORT')       2465
+Username:   getenv('CLOUDRON_MAIL_SMTP_USERNAME')    petition.app@waldorf.one
+Password:   getenv('CLOUDRON_MAIL_SMTP_PASSWORD')    c14618eb575ce29e59a5670abe616938cbb1890b10f8e6c6
+Address:    getenv('CLOUDRON_MAIL_FROM')             petition.app@waldorf.one
+Domain:     getenv('CLOUDRON_MAIL_DOMAIN')           waldorf.one
+
+
+
+Hostname:   getenv('CLOUDRON_REDIS_HOST')       redis-c87fa561-ba54-4b85-9428-28ead1a73fba
+Port:       getenv('CLOUDRON_REDIS_PORT')       6379
+Password:   getenv('CLOUDRON_REDIS_PASSWORD')   2fcf7e310720ccca233586bc56354083590b889c5065a71f
+URL:        getenv('CLOUDRON_REDIS_URL')        redis://redisuser:2fcf7e310720ccca233586bc56354083590b889c5065a71f@redis-c87fa561-ba54-4b85-9428-28ead1a73fba
+
+
+
+Hostname:        getenv('CLOUDRON_LDAP_HOST')           172.18.0.1
+Port:            getenv('CLOUDRON_LDAP_PORT')           3002
+Bind DN:         getenv('CLOUDRON_LDAP_BIND_DN')        cn=c87fa561-ba54-4b85-9428-28ead1a73fba,ou=apps,dc=cloudron
+Bind Password:   getenv('CLOUDRON_LDAP_BIND_PASSWORD')  b2a27fb1fd8284cd9b31340d30349155b3d085b5ba2e92dd66897100744fc9c26a09dca17313e44340e8c78020f6a757092a6b99d79668f84ee2469018e410b7
+Base DN:         getenv('CLOUDRON_LDAP_USERS_BASE_DN')  ou=users,dc=cloudron
+
+
+

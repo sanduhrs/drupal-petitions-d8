@@ -202,7 +202,7 @@ class PetitionForm extends FormBase {
         'entity_url' => $validation_link,
         'entity_title' => $petition->getTitle(),
         'node_url' => $host . '/node/' . $petition->id(),
-        'email_content' => $petition->get('field_email_validation')->getValue(),
+        'email_content' => strip_tags($petition->get('field_email_validation')->getValue()),
         'email_subject' => $petition->get('field_email_validation_subject')->getValue(),
       ];
 
