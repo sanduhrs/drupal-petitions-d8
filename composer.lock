@@ -1648,8 +1648,7 @@
             "homepage": "https://www.drupal.org/project/authorization",
             "support": {
                 "source": "https://git.drupalcode.org/project/authorization"
-            },
-            "time": "2020-09-13T18:23:19+00:00"
+            }
         },
         {
             "name": "drupal/captcha",
