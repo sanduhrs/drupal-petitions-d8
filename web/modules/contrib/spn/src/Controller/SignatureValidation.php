@@ -53,7 +53,7 @@ class SignatureValidation extends ControllerBase {
         $host = \Drupal::request()->getSchemeAndHttpHost();
 
         $params = [
-          'email_content' => strip_tags($node->get('field_email_appreciation')->getValue()),
+          'email_content' => $node->get('field_email_appreciation')->getValue(),
           'email_subject' => $node->get('field_email_appreciation_subject')->getValue(),
           'entity_title' => $node->getTitle(),
           'node_url' => $host . '/node/' . $signature->getNID(),
