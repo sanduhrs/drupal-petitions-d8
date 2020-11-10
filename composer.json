@@ -20,6 +20,7 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/gin": "^3.0@alpha",
+        "drupal/ldap": "^3.0@beta",
         "drupal/olivero": "^1.0@beta",
         "drupal/spn": "^1.0",
         "drupal/swiftmailer": "^2.0@beta",

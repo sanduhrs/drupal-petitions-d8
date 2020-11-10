@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13254c359bf85682a38ed450abfff7e4",
+    "content-hash": "b213b700ee073c8b3001b9884a6840ea",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1597,6 +1597,61 @@
             "time": "2019-06-08T11:03:04+00:00"
         },
         {
+            "name": "drupal/authorization",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/authorization.git",
+                "reference": "6fbcf03c035a2c4ffcad6978991f6510f1407f48"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9",
+                "drupal/externalauth": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta4+3-dev",
+                    "datestamp": "1600021421",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "grahl",
+                    "homepage": "https://www.drupal.org/user/146040"
+                },
+                {
+                    "name": "johnbarclay",
+                    "homepage": "https://www.drupal.org/user/225037"
+                },
+                {
+                    "name": "queenvictoria",
+                    "homepage": "https://www.drupal.org/user/856454"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "An abstraction layer for providers and consumers of authorizations.",
+            "homepage": "https://www.drupal.org/project/authorization",
+            "support": {
+                "source": "https://git.drupalcode.org/project/authorization"
+            },
+            "time": "2020-09-13T18:23:19+00:00"
+        },
+        {
             "name": "drupal/captcha",
             "version": "1.1.0",
             "source": {
@@ -2067,6 +2122,58 @@
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core."
         },
         {
+            "name": "drupal/externalauth",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/externalauth.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/externalauth-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "b1b38e6718fe66bd38fc894dab1f9d7a7d60f10b"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1587629529",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "rgristroph",
+                    "homepage": "https://www.drupal.org/user/516442"
+                },
+                {
+                    "name": "snufkin",
+                    "homepage": "https://www.drupal.org/user/58645"
+                },
+                {
+                    "name": "svendecabooter",
+                    "homepage": "https://www.drupal.org/user/35369"
+                }
+            ],
+            "description": "Helper module to authenticate users using an external site / service and storing identification details",
+            "homepage": "https://www.drupal.org/project/externalauth",
+            "support": {
+                "source": "https://git.drupalcode.org/project/externalauth"
+            }
+        },
+        {
             "name": "drupal/gin",
             "version": "3.0.0-alpha28",
             "source": {
@@ -2185,6 +2292,133 @@
                     "url": "https://paypal.me/saschaeggi"
                 }
             ]
+        },
+        {
+            "name": "drupal/ldap",
+            "version": "3.0.0-beta7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ldap.git",
+                "reference": "8.x-3.0-beta7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ldap-8.x-3.0-beta7.zip",
+                "reference": "8.x-3.0-beta7",
+                "shasum": "496db3a39948e36378b76e34b363ad89ae32811c"
+            },
+            "require": {
+                "drupal/authorization": "1.x-dev",
+                "drupal/core": "~8.0",
+                "drupal/externalauth": "^1.0",
+                "drupal/ldap_servers": "*"
+            },
+            "require-dev": {
+                "drupal/authorization": "*",
+                "drupal/externalauth": "*",
+                "drupal/ldap_servers": "*",
+                "drupal/ldap_user": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-beta7",
+                    "datestamp": "1559320088",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "dgtlmoon",
+                    "homepage": "https://www.drupal.org/user/25027"
+                },
+                {
+                    "name": "grahl",
+                    "homepage": "https://www.drupal.org/user/146040"
+                },
+                {
+                    "name": "johnbarclay",
+                    "homepage": "https://www.drupal.org/user/225037"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "queenvictoria",
+                    "homepage": "https://www.drupal.org/user/856454"
+                },
+                {
+                    "name": "welly",
+                    "homepage": "https://www.drupal.org/user/354705"
+                }
+            ],
+            "description": "Lightweight Directory Access Protocol (LDAP)",
+            "homepage": "https://www.drupal.org/project/ldap",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ldap"
+            }
+        },
+        {
+            "name": "drupal/ldap_servers",
+            "version": "3.0.0-beta7",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/ldap": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-beta7",
+                    "datestamp": "1559320088",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "dgtlmoon",
+                    "homepage": "https://www.drupal.org/user/25027"
+                },
+                {
+                    "name": "grahl",
+                    "homepage": "https://www.drupal.org/user/146040"
+                },
+                {
+                    "name": "johnbarclay",
+                    "homepage": "https://www.drupal.org/user/225037"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "queenvictoria",
+                    "homepage": "https://www.drupal.org/user/856454"
+                },
+                {
+                    "name": "welly",
+                    "homepage": "https://www.drupal.org/user/354705"
+                }
+            ],
+            "description": "Implements LDAP Server Configuration",
+            "homepage": "https://www.drupal.org/project/ldap",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ldap"
+            }
         },
         {
             "name": "drupal/mailsystem",
@@ -6819,6 +7053,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/gin": 15,
+        "drupal/ldap": 10,
         "drupal/olivero": 10,
         "drupal/swiftmailer": 10,
         "drupal/devel_mail_logger": 10
