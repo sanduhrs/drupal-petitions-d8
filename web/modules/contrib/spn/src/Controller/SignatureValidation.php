@@ -83,7 +83,7 @@ class SignatureValidation extends ControllerBase {
 
     // if signature is not found, send error
     } else {
-      $message = $config->get('spn_message_error');;
+      $message = $config->get('spn_message_error');
     }
 
     // redirect the user back to the node page
