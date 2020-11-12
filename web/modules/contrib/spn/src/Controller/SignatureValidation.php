@@ -7,6 +7,7 @@
 
 namespace Drupal\spn\Controller;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\spn\Entity\PetitionSignature;
 use Drupal\spn\Entity\PetitionUser;
@@ -78,6 +79,8 @@ class SignatureValidation extends ControllerBase {
 
         // send email
         $mailManager->mail($module, $mail_key, $to, $language_code, $params, $reply, $send);
+        // Clear cache tag.
+        Cache::invalidateTags(['node:' . $signature->getNID()]);
 
       }
 
