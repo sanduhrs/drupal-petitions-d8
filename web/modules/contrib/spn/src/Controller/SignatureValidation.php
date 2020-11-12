@@ -82,6 +82,8 @@ class SignatureValidation extends ControllerBase {
         // Clear cache tag.
         Cache::invalidateTags(['node:' . $signature->getNID()]);
 
+        $message = $this->t('Your signature has been counted, thank you.');
+
       }
 
     // if signature is not found, send error
