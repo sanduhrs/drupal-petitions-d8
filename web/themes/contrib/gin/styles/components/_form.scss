@@ -342,3 +342,19 @@ fieldset:not(.fieldgroup) {
   padding-right: 2rem;
   background-position: right 8px center;
 }
+
+// Show field block
+// .layout-region > .form-wrapper,
+// .details-wrapper > .form-wrapper {
+//   padding-left: 1.5rem;
+//   margin-bottom: 2.5rem;
+//   border-left: 2px solid var(--colorGinDisabled);
+
+//   &:hover {
+//     border-left-color: var(--colorGinIcons);
+//   }
+
+//   &:focus-within {
+//     border-left-color: var(--colorGinPrimary);
+//   }
+// }

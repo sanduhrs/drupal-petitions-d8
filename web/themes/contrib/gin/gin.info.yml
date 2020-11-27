@@ -173,8 +173,6 @@ libraries-extend:
     - claro/checkbox
   core/drupal.message:
     - claro/messages
-  core/drupal.progress:
-    - claro/progress
   core/drupal.vertical-tabs:
     - claro/vertical-tabs
   core/jquery.ui:
@@ -223,7 +221,7 @@ regions:
 regions_hidden:
   - sidebar_first
 
-# Information added by Drupal.org packaging script on 2020-11-08
-version: '8.x-3.0-alpha28'
+# Information added by Drupal.org packaging script on 2020-11-14
+version: '8.x-3.0-alpha30'
 project: 'gin'
-datestamp: 1604868114
+datestamp: 1605395015

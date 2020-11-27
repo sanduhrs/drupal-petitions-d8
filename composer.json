@@ -15,6 +15,7 @@
         }
     ],
     "require": {
+        "ext-json": "*",
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
@@ -23,7 +24,9 @@
         "drupal/ldap": "^3.0@beta",
         "drupal/olivero": "^1.0@beta",
         "drupal/spn": "^1.0",
+        "drupal/stripe": "^1.0",
         "drupal/swiftmailer": "^2.0@beta",
+        "drupal/webform": "^5.22",
         "drush/drush": "^10.3"
     },
     "conflict": {
