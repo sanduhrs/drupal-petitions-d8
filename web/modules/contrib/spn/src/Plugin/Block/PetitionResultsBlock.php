@@ -45,7 +45,7 @@ class PetitionResultsBlock extends BlockBase {
         $query_result_count = $petition_count->countQuery()->execute()->fetchField();
 
         if ($query_result_count == 0) {
-          return;
+          return [];
         }
 
         // fetch all non-anonymous applications
@@ -121,6 +121,7 @@ class PetitionResultsBlock extends BlockBase {
       }
 
     }
+    return [];
   }
 
   /**

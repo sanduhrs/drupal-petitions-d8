@@ -35,6 +35,7 @@ class PetitionFormBlock extends BlockBase {
       }
 
     }
+    return [];
   }
 
   /**
