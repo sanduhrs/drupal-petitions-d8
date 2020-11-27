@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53e91442e40388814766fa8f576b5759",
+    "content-hash": "287a0a37893fb01e5975310ebba46b52",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2601,6 +2601,77 @@
             "support": {
                 "source": "https://git.drupal.org/project/recaptcha.git",
                 "issues": "https://www.drupal.org/project/issues/recaptcha"
+            }
+        },
+        {
+            "name": "drupal/simple_ldap",
+            "version": "1.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/simple_ldap.git",
+                "reference": "8.x-1.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/simple_ldap-8.x-1.0-alpha3.zip",
+                "reference": "8.x-1.0-alpha3",
+                "shasum": "187e0b415f48815f1b5d1cfeabebf38626e8bed1"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/simple_ldap_user": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha3",
+                    "datestamp": "1590813055",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "John Franklin",
+                    "homepage": "https://www.drupal.org/user/683430"
+                },
+                {
+                    "name": "KarenS",
+                    "homepage": "https://www.drupal.org/user/45874"
+                },
+                {
+                    "name": "blc",
+                    "homepage": "https://www.drupal.org/user/727498"
+                },
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                },
+                {
+                    "name": "jazzdrive3",
+                    "homepage": "https://www.drupal.org/user/348785"
+                },
+                {
+                    "name": "mtift",
+                    "homepage": "https://www.drupal.org/user/751908"
+                },
+                {
+                    "name": "q0rban",
+                    "homepage": "https://www.drupal.org/user/31022"
+                }
+            ],
+            "description": "Simple LDAP server configuration.",
+            "homepage": "https://www.drupal.org/project/simple_ldap",
+            "support": {
+                "source": "https://git.drupalcode.org/project/simple_ldap"
             }
         },
         {
@@ -7323,6 +7394,7 @@
         "drupal/gin": 15,
         "drupal/ldap": 10,
         "drupal/olivero": 10,
+        "drupal/simple_ldap": 15,
         "drupal/swiftmailer": 10,
         "drupal/devel_mail_logger": 10
     },

@@ -1,0 +1,6 @@
+basedn: ''
+user_scope: sub
+object_class: {  }
+name_attribute: uid
+mail_attribute: mail
+cron_frequency: 0

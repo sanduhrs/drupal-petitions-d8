@@ -1,0 +1,11 @@
+name: Simple LDAP
+description: Simple LDAP server configuration.
+type: module
+core_version_requirement: ^8 || ^9
+configure: simple_ldap.server
+core: 8.x
+package: LDAP
+# Information added by Drupal.org packaging script on 2020-05-30
+version: '8.x-1.0-alpha3'
+project: 'simple_ldap'
+datestamp: 1590813057
