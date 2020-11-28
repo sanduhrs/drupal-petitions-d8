@@ -26,6 +26,8 @@ module:
   language: 0
   layout_builder: 0
   layout_discovery: 0
+  ldap: 0
+  ldap_servers: 0
   link: 0
   locale: 0
   mailsystem: 0

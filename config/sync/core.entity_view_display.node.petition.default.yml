@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.petition.field_email_appreciation_subject
     - field.field.node.petition.field_email_validation
     - field.field.node.petition.field_email_validation_subject
+    - field.field.node.petition.layout_builder__layout
     - node.type.petition
   enforced:
     module:
@@ -20,7 +21,7 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
+    allow_custom: true
     enabled: true
     sections:
       -
@@ -28,8 +29,18 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          1198c907-af4b-4efc-aafb-b133f8eaab05:
-            uuid: 1198c907-af4b-4efc-aafb-b133f8eaab05
+          45614c55-805a-4f7f-a3f8-60d36681ae20:
+            uuid: 45614c55-805a-4f7f-a3f8-60d36681ae20
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:petition:links'
+            additional: {  }
+            weight: 0
+          596867a8-ed12-4c82-8cdc-5333197310b5:
+            uuid: 596867a8-ed12-4c82-8cdc-5333197310b5
             region: content
             configuration:
               label_display: '0'
@@ -43,17 +54,28 @@ third_party_settings:
                 third_party_settings: {  }
             additional: {  }
             weight: 1
-          307cc795-98df-484f-babc-61b1bd79364f:
-            uuid: 307cc795-98df-484f-babc-61b1bd79364f
+          ec50c253-a212-44b7-bd2b-1d8aa272c781:
+            uuid: ec50c253-a212-44b7-bd2b-1d8aa272c781
             region: content
             configuration:
               id: petition_form_block
-              label: 'Jetzt unterschreiben!'
+              label: 'Petition Form Block'
               provider: spn
               label_display: visible
               context_mapping: {  }
             additional: {  }
             weight: 2
+          3fe58982-cec0-44cb-aebd-c450df8022c4:
+            uuid: 3fe58982-cec0-44cb-aebd-c450df8022c4
+            region: content
+            configuration:
+              id: spn_results
+              label: 'Petition Results Block'
+              provider: spn
+              label_display: visible
+              context_mapping: {  }
+            additional: {  }
+            weight: 3
         third_party_settings: {  }
 _core:
   default_config_hash: 9vUWDp6GSDEFA3VLxv7MK7ZyHJwohKMhGCd0RSCtXkw
@@ -80,3 +102,4 @@ hidden:
   field_email_validation: true
   field_email_validation_subject: true
   langcode: true
+  layout_builder__layout: true

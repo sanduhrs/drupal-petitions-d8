@@ -16,7 +16,7 @@ _core:
   default_config_hash: AjZc0obosbwe9HzoGlAwaUFQWr8xsWGMeUts6KHJ35Q
 name: Petition
 type: petition
-description: 'Content type that can be used to create and manage petitions'
+description: 'Content type that can be used to create and manage petitions.'
 help: ''
 new_revision: false
 preview_mode: 1
