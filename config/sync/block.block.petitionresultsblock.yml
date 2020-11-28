@@ -15,7 +15,7 @@ provider: null
 plugin: spn_results
 settings:
   id: spn_results
-  label: 'Petition Results Block'
+  label: 'The signatories'
   provider: spn
   label_display: visible
 visibility:
