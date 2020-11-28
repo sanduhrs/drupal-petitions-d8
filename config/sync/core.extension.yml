@@ -27,7 +27,9 @@ module:
   layout_builder: 0
   layout_discovery: 0
   ldap: 0
+  ldap_authentication: 0
   ldap_servers: 0
+  ldap_user: 0
   link: 0
   locale: 0
   mailsystem: 0
@@ -54,6 +56,7 @@ module:
   user: 0
   views_ui: 0
   content_translation: 10
+  externalauth: 10
   views: 10
   standard: 1000
 theme:
