@@ -62,11 +62,11 @@ class SimpleCampaignForm extends FormBase {
       '#title' => $this->t('Amount'),
       '#default_value' => 250,
       '#options' => [
-        50 => $this->t('50 €'),
-        100 => $this->t('100 €'),
-        250 => $this->t('250 €'),
-        500 => $this->t('500 €'),
-        1000 => $this->t('1000 €'),
+        50 => $this->t('50€'),
+        100 => $this->t('100€'),
+        250 => $this->t('250€'),
+        500 => $this->t('500€'),
+        1000 => $this->t('1000€'),
       ],
     ];
     $form['other_amount'] = [
