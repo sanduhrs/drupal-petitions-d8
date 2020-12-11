@@ -86,7 +86,7 @@ class SimpleCampaignForm extends FormBase {
       '#description' => $this->t('Die Zahlung wird durch den Online-Bezahldienst <a href="https://stripe.com/de">Stripe</a> vollzogen, wir speichern keine Kreditkartendaten oder andere sensible Informationen in unserem System.'),
     ];
     $form['manual'] = [
-      '#markup' => $this->t('Oder per Überweisung auf das Konto bei der Sparkasse Heidelberg<br/><b>Freundeskreis der Freien Waldorfschule Heidelberg e. V.</b><br/><b>"Spende Breitband"</b> oder <b>"Anonyme Spende Breitband"</b><br/><b>DE39 6725 0020 0009 0944 15</b><br>Wenn Du das Stichwort <b>Anonym</b> angibst, werden wir Deinen Namen nicht veröffentlichen.'),
+      '#markup' => $this->t('Oder per Überweisung auf das Konto bei der Sparkasse Heidelberg<br/><b>Freundeskreis der Freien Waldorfschule Heidelberg e. V.</b><br/><b>"Spende Breitband"</b> oder <b>"Anonyme Spende Breitband"</b><br/><b>DE39 6725 0020 0009 0944 15</b><br>Wenn Du das Stichwort <b>Anonym</b> angibst, werden wir Deinen Namen nicht veröffentlichen. Willst Du einen anderen Namen als den des Kontoinhabers veröffentlichen, gib ihn bitte ebenfalls bei der Überweisung mit an.'),
       '#suffix' => '<br><br><br>',
     ];
 
