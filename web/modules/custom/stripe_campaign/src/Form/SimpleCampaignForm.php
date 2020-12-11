@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\stripe_campaign\Entity\Campaign;
 use Stripe\Charge;
-use Stripe\Error\Base as StripeBaseException;
+use Stripe\Exception\ApiErrorException;
 use Stripe\Stripe;
 
 /**
@@ -176,7 +176,7 @@ class SimpleCampaignForm extends FormBase {
       ]);
       return $charge;
     }
-    catch (StripeBaseException $e) {
+    catch (ApiErrorException $e) {
       $this->messenger()->addError($this->t('Stripe error: %error', ['%error' => $e->getMessage()]));
     }
   }
