@@ -166,7 +166,7 @@ class SimpleCampaignForm extends FormBase {
   private function createCharge($stripe_token, $amount) {
     try {
       $config = \Drupal::config('stripe.settings');
-      $environment = $config->get('apikey.environment');
+      $environment = $config->get('environment');
       Stripe::setApiKey($config->get('apikey.' . $environment . '.secret'));
       $charge = Charge::create([
         'amount' => $amount * 100,
