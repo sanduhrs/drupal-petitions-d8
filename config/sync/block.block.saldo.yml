@@ -1,28 +1,28 @@
-uuid: 8c3bd245-8faa-4dc5-9fd3-60d27be9ec4e
+uuid: 16681e2f-dabf-4f05-a739-d469aef47d8a
 langcode: de
 status: true
 dependencies:
   module:
     - node
-    - spn
+    - stripe_campaign
   theme:
     - olivero
-id: petitionresultsblock
+id: saldo
 theme: olivero
 region: sidebar
-weight: -6
+weight: -7
 provider: null
-plugin: spn_results
+plugin: stripe_campaign_saldo
 settings:
-  id: spn_results
-  label: 'The signatories'
-  provider: spn
+  id: stripe_campaign_saldo
+  label: 'Bisheriger Zwischenstand'
+  provider: stripe_campaign
   label_display: visible
 visibility:
   node_type:
     id: node_type
     bundles:
-      petition: petition
+      campaign: campaign
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
