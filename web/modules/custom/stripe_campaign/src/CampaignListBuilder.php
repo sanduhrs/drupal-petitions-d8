@@ -79,7 +79,6 @@ class CampaignListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['id'] = $this->t('ID');
-    $header['uid'] = $this->t('Author');
     $header['created'] = $this->t('Created');
     return $header + parent::buildHeader();
   }
@@ -90,10 +89,6 @@ class CampaignListBuilder extends EntityListBuilder {
   public function buildRow(EntityInterface $entity) {
     /* @var $entity \Drupal\stripe_Campaign\CampaignInterface */
     $row['id'] = $entity->link();
-    $row['uid']['data'] = [
-      '#theme' => 'username',
-      '#account' => $entity->getOwner(),
-    ];
     $row['created'] = $this->dateFormatter->format($entity->getCreatedTime());
     return $row + parent::buildRow($entity);
   }
