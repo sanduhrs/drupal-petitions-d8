@@ -6,7 +6,7 @@ smtp_credential_provider: swiftmailer
 smtp_credentials:
   swiftmailer:
     username: user@server.tld
-    password: 'password'
+    password: password
 sendmail_path: /usr/sbin/sendmail
 sendmail_mode: bs
 spool_directory: ''

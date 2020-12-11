@@ -445,7 +445,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: maeh
+            value: 'Diese Kampagne hat bisher keine Unterstützer.'
             format: basic_html
           plugin_id: text
       relationships: {  }
