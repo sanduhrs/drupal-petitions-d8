@@ -1,0 +1,14 @@
+name: Stripe
+type: module
+description: Stripe
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Stripe
+dependencies:
+  - drupal:system (>= 8.5.x)
+configure: stripe.settings
+
+# Information added by Drupal.org packaging script on 2020-08-27
+version: '8.x-1.0'
+project: 'stripe'
+datestamp: 1598551122

@@ -46,10 +46,14 @@ module:
   search: 0
   shortcut: 0
   spn: 0
+  stripe: 0
+  stripe_campaign: 0
+  stripe_examples: 0
   swiftmailer: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0

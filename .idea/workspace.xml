@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be5f7fe4-02c8-4848-906d-beb3f73d998f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sync/core.entity_form_display.node.petition.default.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sync/core.entity_form_display.node.petition.default.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sync/core.entity_view_display.node.petition.default.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sync/core.entity_view_display.node.petition.default.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sync/core.extension.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sync/core.extension.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sync/node.type.petition.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sync/node.type.petition.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/sync/swiftmailer.transport.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sync/swiftmailer.transport.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/sync/system.performance.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sync/system.performance.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/modules/contrib/ldap/ldap_servers/config/schema/server.schema.yml" beforeDir="false" afterPath="$PROJECT_DIR$/web/modules/contrib/ldap/ldap_servers/config/schema/server.schema.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +158,8 @@
       <workItem from="1605691789463" duration="9935000" />
       <workItem from="1606045835278" duration="9123000" />
       <workItem from="1606217139590" duration="57000" />
-      <workItem from="1606493774386" duration="9992000" />
+      <workItem from="1606493774386" duration="10724000" />
+      <workItem from="1607356937090" duration="1770000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,7 @@
+stripe_examples:
+  js:
+    js/stripe_examples.js: {}
+
+  css:
+    theme:
+      css/stripe_examples.css: {}

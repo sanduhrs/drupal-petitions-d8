@@ -29,16 +29,6 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          45614c55-805a-4f7f-a3f8-60d36681ae20:
-            uuid: 45614c55-805a-4f7f-a3f8-60d36681ae20
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:petition:links'
-            additional: {  }
-            weight: 0
           596867a8-ed12-4c82-8cdc-5333197310b5:
             uuid: 596867a8-ed12-4c82-8cdc-5333197310b5
             region: content
@@ -65,17 +55,6 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 2
-          3fe58982-cec0-44cb-aebd-c450df8022c4:
-            uuid: 3fe58982-cec0-44cb-aebd-c450df8022c4
-            region: content
-            configuration:
-              id: spn_results
-              label: 'Petition Results Block'
-              provider: spn
-              label_display: visible
-              context_mapping: {  }
-            additional: {  }
-            weight: 3
         third_party_settings: {  }
 _core:
   default_config_hash: 9vUWDp6GSDEFA3VLxv7MK7ZyHJwohKMhGCd0RSCtXkw

@@ -27,7 +27,7 @@
         "drupal/spn": "^1.0",
         "drupal/stripe": "^1.0",
         "drupal/swiftmailer": "^2.0@beta",
-        "drupal/webform": "^5.22",
+        "drupal/token": "^1.8",
         "drush/drush": "^10.3"
     },
     "conflict": {

@@ -1,0 +1,9 @@
+campaign:
+  js:
+    https://js.stripe.com/v3/: { type: external, minified: true }
+    js/stripe_campaign.js: {}
+  css:
+    component:
+      css/stripe_campaign.css: {}
+  dependencies:
+    - core/jquery.once

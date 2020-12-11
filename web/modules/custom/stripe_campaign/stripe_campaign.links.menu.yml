@@ -1,0 +1,3 @@
+stripe_campaign.stripe_campaign_simple_checkout:
+  title: 'Simple campaign'
+  route_name: stripe_campaign.stripe_campaign_simple_checkout

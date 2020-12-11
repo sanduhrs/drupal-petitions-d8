@@ -1,0 +1,21 @@
+uuid: cfb93818-9907-4281-b70c-ba5d2b49164c
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.campaign
+  module:
+    - layout_builder
+id: node.campaign.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: campaign
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

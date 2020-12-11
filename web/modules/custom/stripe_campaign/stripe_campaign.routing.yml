@@ -1,0 +1,7 @@
+stripe_campaign.stripe_campaign_simple_checkout:
+  path: '/stripe_campaign/form/simple_checkout'
+  defaults:
+    _form: '\Drupal\stripe_campaign\Form\SimpleCheckoutForm'
+    _title: 'Stripe campaign'
+  requirements:
+    _access: 'TRUE'

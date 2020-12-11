@@ -1,0 +1,18 @@
+entity.campaign.view:
+  title: View
+  route_name: entity.campaign.canonical
+  base_route: entity.campaign.canonical
+entity.campaign.edit_form:
+  title: Edit
+  route_name: entity.campaign.edit_form
+  base_route: entity.campaign.canonical
+entity.campaign.delete_form:
+  title: Delete
+  route_name: entity.campaign.delete_form
+  base_route: entity.campaign.canonical
+  weight: 10
+entity.campaign.collection:
+  title: Campaigns
+  route_name: entity.campaign.collection
+  base_route: system.admin_content
+  weight: 10

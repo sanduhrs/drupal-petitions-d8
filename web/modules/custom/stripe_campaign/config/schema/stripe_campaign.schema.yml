@@ -1,0 +1,7 @@
+block.settings.stripe_campaign_campaign:
+  type: block_settings
+  label: 'Campaign block'
+  mapping:
+    foo:
+      type: string
+      label: Foo

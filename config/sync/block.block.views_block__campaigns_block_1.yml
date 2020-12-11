@@ -1,0 +1,33 @@
+uuid: 725a8e3b-566e-46e4-a5ef-a048d165b493
+langcode: de
+status: true
+dependencies:
+  config:
+    - views.view.campaigns
+  module:
+    - node
+    - views
+  theme:
+    - olivero
+id: views_block__campaigns_block_1
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_block:campaigns-block_1'
+settings:
+  id: 'views_block:campaigns-block_1'
+  label: 'Die Unterstützer'
+  provider: views
+  label_display: visible
+  views_label: 'Die Unterstützer'
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      campaign: campaign
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

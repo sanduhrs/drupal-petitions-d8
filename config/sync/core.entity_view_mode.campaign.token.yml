@@ -1,0 +1,10 @@
+uuid: 9e697da4-d3b6-45ec-8e19-ad2283279fb3
+langcode: de
+status: true
+dependencies:
+  module:
+    - stripe_campaign
+id: campaign.token
+label: Token
+targetEntityType: campaign
+cache: true

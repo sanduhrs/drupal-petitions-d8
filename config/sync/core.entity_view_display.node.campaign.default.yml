@@ -1,0 +1,71 @@
+uuid: 614f33c1-fdd9-4931-933d-43de0080c79b
+langcode: de
+status: true
+dependencies:
+  config:
+    - field.field.node.campaign.body
+    - field.field.node.campaign.layout_builder__layout
+    - node.type.campaign
+  module:
+    - layout_builder
+    - layout_discovery
+    - stripe_campaign
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          9fa0b443-b089-4247-acda-5ba3af2f1b4f:
+            uuid: 9fa0b443-b089-4247-acda-5ba3af2f1b4f
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:campaign:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          79f12a6c-c10f-422b-9b0e-ce1e1ada091b:
+            uuid: 79f12a6c-c10f-422b-9b0e-ce1e1ada091b
+            region: content
+            configuration:
+              id: stripe_campaign
+              label: 'Jetzt unterstützen!'
+              provider: stripe_campaign
+              label_display: visible
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+id: node.campaign.default
+targetEntityType: node
+bundle: campaign
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true

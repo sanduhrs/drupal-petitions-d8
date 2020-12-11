@@ -1,0 +1,13 @@
+environment: test
+apikey:
+  test:
+    public: ''
+    secret: ''
+    webhook: ''
+  live:
+    public: ''
+    secret: ''
+    webhook: ''
+_core:
+  default_config_hash: rvasJJkL462tLuGEfcTDUE_1ReQ_UkXB1gsCVJtCIPg
+langcode: de
