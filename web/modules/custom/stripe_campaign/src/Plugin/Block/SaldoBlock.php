@@ -63,9 +63,17 @@ class SaldoBlock extends BlockBase implements ContainerFactoryPluginInterface {
    */
   public function build() {
     $node = \Drupal::routeMatch()->getParameter('node');
+
+    // @todo make configurable via block config.
+    $target = 40000;
     $result = $this->connection->query('select SUM(amount) as amount from campaign WHERE nid = :nid', [':nid' => $node->id()])->fetchObject();
-    $build['content'] = [
-      '#markup' => $this->t('@sum€ von @target€', ['@sum' => $result->amount, '@target' => '40000']),
+    $percent = floor($result->amount / $target * 100);
+
+    $build['progress'] = [
+      '#theme' => 'progress_bar',
+      '#label' => $this->t('@sum€ of @target€', ['@sum' => $result->amount, '@target' => $target]),
+      '#percent' => $percent,
+      '#message' => $this->t('Goal achieved'),
     ];
     return $build;
   }
@@ -74,12 +82,13 @@ class SaldoBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   public function getCacheTags() {
-    //With this when your node change your block will rebuild
+    // With this when your node change your block will rebuild.
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      //if there is node add its cachetag
-      return Cache::mergeTags(parent::getCacheTags(), array('node:' . $node->id()));
-    } else {
-      //Return default tags instead.
+      // If there is node add its cachetag.
+      return Cache::mergeTags(parent::getCacheTags(), ['node:' . $node->id()]);
+    }
+    else {
+      // Return default tags instead.
       return parent::getCacheTags();
     }
   }
@@ -88,10 +97,10 @@ class SaldoBlock extends BlockBase implements ContainerFactoryPluginInterface {
    * {@inheritdoc}
    */
   public function getCacheContexts() {
-    //if you depends on \Drupal::routeMatch()
-    //you must set context of this block with 'route' context tag.
-    //Every new route this block will rebuild
-    return Cache::mergeContexts(parent::getCacheContexts(), array('route'));
+    // If you depends on \Drupal::routeMatch()
+    // you must set context of this block with 'route' context tag.
+    // Every new route this block will rebuild.
+    return Cache::mergeContexts(parent::getCacheContexts(), ['route']);
   }
 
 }

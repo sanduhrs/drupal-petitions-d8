@@ -12,7 +12,7 @@ dependencies:
 id: views_block__campaigns_block_1
 theme: olivero
 region: sidebar
-weight: -8
+weight: -7
 provider: null
 plugin: 'views_block:campaigns-block_1'
 settings:

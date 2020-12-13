@@ -10,12 +10,12 @@ dependencies:
 id: saldo
 theme: olivero
 region: sidebar
-weight: -7
+weight: -8
 provider: null
 plugin: stripe_campaign_saldo
 settings:
   id: stripe_campaign_saldo
-  label: 'Bisheriger Zwischenstand'
+  label: 'Aktueller Zwischenstand'
   provider: stripe_campaign
   label_display: visible
 visibility:
