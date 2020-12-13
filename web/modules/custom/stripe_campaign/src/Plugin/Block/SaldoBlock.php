@@ -75,6 +75,7 @@ class SaldoBlock extends BlockBase implements ContainerFactoryPluginInterface {
       '#percent' => $percent,
       '#message' => $this->t('Goal achieved'),
     ];
+    $build['#attached']['library'][] = 'olivero/progress';
     return $build;
   }
 
