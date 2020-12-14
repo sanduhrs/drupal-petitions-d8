@@ -4,6 +4,7 @@ namespace Drupal\stripe_campaign\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -17,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   category = @Translation("Campaign")
  * )
  */
-class SaldoBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class SaldoBlock extends BlockBase implements CacheableDependencyInterface, ContainerFactoryPluginInterface {
 
   /**
    * The database connection.
