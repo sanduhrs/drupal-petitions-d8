@@ -22,11 +22,9 @@ form.stripe-processing .form-submit:focus {
   }
 }
 
-#edit-amount {
-  border: 1px solid red !important;
-}
 #edit-amount .form-type--boolean {
   width: 10%;
   float: left;
   clear: none;
+  padding-right: 5em;
 }
