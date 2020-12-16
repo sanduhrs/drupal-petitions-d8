@@ -2,6 +2,7 @@
 
 namespace Drupal\stripe_campaign\Form;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
@@ -127,6 +128,7 @@ class SimpleCampaignForm extends FormBase {
             'token' => $form_state->getValue('stripe'),
             'anonymous' => $form_state->getValue('anonymous'),
           ])->save();
+          Cache::invalidateTags(['node:' . $form_state->getValue('nid')]);
         }
         else {
           $this->messenger()->addError('Leider konnte Deine Unterstützung nicht gebucht werden.');
