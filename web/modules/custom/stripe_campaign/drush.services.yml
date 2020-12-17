@@ -1,0 +1,5 @@
+services:
+  stripe_campaign.commands:
+    class: \Drupal\stripe_campaign\Commands\StripeCampaignCommands
+    tags:
+      - { name: drush.command }

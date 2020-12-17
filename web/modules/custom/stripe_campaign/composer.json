@@ -1,0 +1,11 @@
+{
+    "name": "drupal/stripe_campaign",
+    "type": "drupal-module",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^10"
+            }
+        }
+    }
+}
