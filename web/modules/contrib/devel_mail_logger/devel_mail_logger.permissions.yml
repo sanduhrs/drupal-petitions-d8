@@ -1,0 +1,8 @@
+devel_mail_logger access logged mail:
+  title: 'View logged email messages'
+
+devel_mail_logger send test mail:
+  title: 'Send test email messages'
+
+devel_mail_logger delete test mail:
+  title: 'Delete test email messages'

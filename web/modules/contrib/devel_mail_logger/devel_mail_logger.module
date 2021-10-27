@@ -28,13 +28,13 @@ function devel_mail_logger_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_mail().
  */
 function devel_mail_logger_mail($key, &$message, $params) {
-  $options = array(
+  $options = [
     'langcode' => $message['langcode'],
-  );
+  ];
   switch ($key) {
     case 'send_test':
       $message['from'] = \Drupal::config('system.site')->get('mail');
-      $message['subject'] = t('Your mail subject Here: @subject', array('@subject' => $params['subject']), $options);
+      $message['subject'] = t('Your mail subject Here: @subject', ['@subject' => $params['subject']], $options);
       $message['body'][] = Html::escape($params['message']);
       break;
   }

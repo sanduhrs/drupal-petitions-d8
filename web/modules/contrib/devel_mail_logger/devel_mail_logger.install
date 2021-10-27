@@ -5,47 +5,50 @@
  * Devel debug log module install/schema hooks.
  */
 
+/**
+ * Implements hook_schema().
+ */
 function devel_mail_logger_schema() {
-  $schema = array();
+  $schema = [];
 
-  $schema['devel_mail_logger'] = array(
+  $schema['devel_mail_logger'] = [
     'description' => 'Table for storing debug mails.',
-    'fields' => array(
-      'id' => array(
+    'fields' => [
+      'id' => [
         'description' => 'The mail identifier.',
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
-      ),
-      'timestamp' => array(
+      ],
+      'timestamp' => [
         'description' => 'The Unix timestamp when the mail was saved.',
         'type' => 'int',
         'not null' => TRUE,
         'default' => 0,
-      ),
-      'recipient' => array(
+      ],
+      'recipient' => [
         'description' => 'The mail to.',
         'type' => 'varchar',
         'length' => '255',
         'not null' => TRUE,
         'default' => '',
-      ),
-      'subject' => array(
+      ],
+      'subject' => [
         'description' => 'The mail subject.',
         'type' => 'varchar',
         'length' => '255',
         'not null' => TRUE,
         'default' => '',
-      ),
-      'message' => array(
+      ],
+      'message' => [
         'description' => 'The mail array from drupal.',
         'type' => 'text',
         'size' => 'big',
         'not null' => TRUE,
-      ),
-    ),
-    'primary key' => array('id'),
-  );
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
 
   return $schema;
 }

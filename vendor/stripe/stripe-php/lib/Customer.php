@@ -36,6 +36,7 @@ namespace Stripe;
  * @property null|\Stripe\StripeObject $shipping Mailing and shipping address for the customer. Appears on invoices emailed to this customer.
  * @property \Stripe\Collection $sources The customer's payment sources, if any.
  * @property \Stripe\Collection $subscriptions The customer's current subscriptions, if any.
+ * @property \Stripe\StripeObject $tax
  * @property null|string $tax_exempt Describes the customer's tax exemption status. One of <code>none</code>, <code>exempt</code>, or <code>reverse</code>. When set to <code>reverse</code>, invoice and receipt PDFs include the text <strong>&quot;Reverse charge&quot;</strong>.
  * @property \Stripe\Collection $tax_ids The customer's tax IDs.
  */
@@ -77,6 +78,25 @@ class Customer extends ApiResource
         $url = $this->instanceUrl() . '/discount';
         list($response, $opts) = $this->_request('delete', $url, $params, $opts);
         $this->refreshFrom(['discount' => null], $opts, true);
+    }
+
+    /**
+     * @param null|array $params
+     * @param null|array|string $opts
+     * @param mixed $id
+     *
+     * @throws \Stripe\Exception\ApiErrorException if the request fails
+     *
+     * @return \Stripe\Collection list of PaymentMethods
+     */
+    public static function allPaymentMethods($id, $params = null, $opts = null)
+    {
+        $url = static::resourceUrl($id) . '/payment_methods';
+        list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
+        $obj = \Stripe\Util\Util::convertToStripeObject($response->json, $opts);
+        $obj->setLastResponse($response);
+
+        return $obj;
     }
 
     const PATH_BALANCE_TRANSACTIONS = '/balance_transactions';

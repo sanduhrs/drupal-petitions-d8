@@ -2,15 +2,11 @@
 
 namespace Drupal\devel_mail_logger\Plugin\Mail;
 
-use Drupal\Component\Utility\Unicode;
-use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Mail\MailFormatHelper;
 use Drupal\Core\Mail\MailInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Site\Settings;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Database\Driver\mysql\Connection;
-
 
 /**
  * Defines a mail backend that saves emails to DB.
@@ -47,11 +43,15 @@ class DevelMailLogger implements MailInterface, ContainerFactoryPluginInterface 
    *   The plugin implementation definition.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
+   * @param \Drupal\Core\Database\Connection $database
+   *   A Database connection to use for reading and writing database data.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+  public function __construct(array $configuration,
+  $plugin_id,
+  $plugin_definition,
       Connection $database
-    ){
-     $this->database = $database;
+    ) {
+    $this->database = $database;
   }
 
   /**
@@ -73,7 +73,7 @@ class DevelMailLogger implements MailInterface, ContainerFactoryPluginInterface 
 
     $query = $this->database->insert('devel_mail_logger')
       ->fields(array(
-        'timestamp' => REQUEST_TIME,
+        'timestamp' => \Drupal::time()->getRequestTime(),
         'recipient' => $message['to'],
         'subject' => $message['subject'],
         'message' => json_encode($message),
@@ -97,4 +97,5 @@ class DevelMailLogger implements MailInterface, ContainerFactoryPluginInterface 
 
     return $message;
   }
+
 }

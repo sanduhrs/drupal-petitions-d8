@@ -4,7 +4,7 @@ namespace Drupal\devel_mail_logger\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Database\Driver\mysql\Connection;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Mail\MailManagerInterface;
@@ -17,9 +17,9 @@ use Drupal\Core\Render\Markup;
 class DevelMailLoggerController extends ControllerBase {
 
   /**
-   * Drupal\Core\Database\Driver\mysql\Connection definition.
+   * Drupal\Core\Database\Connection definition.
    *
-   * @var \Drupal\Core\Database\Driver\mysql\Connection
+   * @var \Drupal\Core\Database\Connection;
    */
   protected $database;
   /**
@@ -34,7 +34,6 @@ class DevelMailLoggerController extends ControllerBase {
    * @var \Drupal\Core\Form\FormBuilderInterface
    */
   protected $formBuilder;
-
   /**
    * Drupal\Core\Mail\MailManagerInterface definition.
    *
@@ -70,7 +69,7 @@ class DevelMailLoggerController extends ControllerBase {
   }
 
   /**
-   *  Show a list of mails from db
+   * Show a list of mails from db.
    */
   public function listMails() {
 
@@ -113,7 +112,7 @@ class DevelMailLoggerController extends ControllerBase {
       ];
     }
 
-    $build = array(
+    $build = [
       'form' => $this->formBuilder->getForm('Drupal\devel_mail_logger\Form\DevelMailLoggerDeleteForm'),
       'mail_table' => [
         '#type' => 'table',
@@ -122,11 +121,10 @@ class DevelMailLoggerController extends ControllerBase {
         '#attributes' => ['id' => 'admin-dblog', 'class' => ['admin-dblog']],
         '#empty' => $this->t('No debug mails available.'),
       ],
-
-      'pager' => array(
+      'pager' => [
         '#type' => 'pager'
-      ),
-    );
+      ],
+    ];
 
     return $build;
   }
@@ -144,62 +142,68 @@ class DevelMailLoggerController extends ControllerBase {
     $rows = [];
     foreach ($mail->headers as $key => $value) {
       $rows[] = [
-        ['data' => $key, 'header' => true],
-        $value
+        ['data' => $key, 'header' => TRUE],
+        $value,
       ];
     }
 
-    $build['headers'] = array(
+    $build['headers'] = [
       '#type' => 'details',
       '#title' => 'Headers',
-    );
-    $build['headers']['table'] = array(
+    ];
+    $build['headers']['table'] = [
       '#type' => 'table',
       '#rows' => $rows,
-    );
-
+      '#attributes' => [
+        'class' => ['table table__header'],
+      ],
+    ];
 
     $rows = [
       [
         ['data' => $this->t('To: '), 'header' => TRUE],
-        $this->t($mail->to),
+        $mail->to,
       ],
       [
         ['data' => $this->t('Subject: '), 'header' => TRUE],
-        $this->t($mail->subject),
+        $mail->subject,
       ],
       [
         ['data' => $this->t('Body: '), 'header' => TRUE],
-	Markup::create(nl2br(is_array($mail->body) ? implode('', $mail->body) : $mail->body)),
+	      Markup::create(nl2br(is_array($mail->body) ? implode('', $mail->body) : $mail->body)),
       ],
     ];
 
     $build['mail_table'] = [
       '#type' => 'table',
       '#rows' => $rows,
+      '#attributes' => [
+        'class' => ['table table__content'],
+      ],
     ];
 
     return $build;
   }
 
-
   /**
-   * Send a test mail to current user
+   * Send a test mail to current user.
+   *
    * @return [type] [description]
    */
-  public function sendMail(){
+  public function sendMail() {
     $module = 'devel_mail_logger';
     $key = 'send_test';
     $to = \Drupal::currentUser()->getEmail();
     $params['message'] = 'body';
     $params['subject'] = 'subject';
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
-    $send = true;
+    $send = TRUE;
 
     $result = $this->pluginManagerMail->mail($module, $key, $to, $langcode, $params, NULL, $send);
 
-    return array(
+    return [
       '#markup' => t('Mail sent.'),
-    );
+    ];
   }
+
 }

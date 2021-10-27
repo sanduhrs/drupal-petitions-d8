@@ -2,12 +2,11 @@ name: 'Devel Mail Logger'
 type: module
 description: 'A Custom Mail Interface that logs mail to DB'
 package: Development
-# core: 8.x
+core_version_requirement: ^8 || ^9
 tags:
  - developer
 
-# Information added by Drupal.org packaging script on 2019-05-16
-version: '8.x-1.0-beta3'
-core: '8.x'
+# Information added by Drupal.org packaging script on 2021-02-05
+version: '8.x-1.0-beta4'
 project: 'devel_mail_logger'
-datestamp: 1557987490
+datestamp: 1612539471

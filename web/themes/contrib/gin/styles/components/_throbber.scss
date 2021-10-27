@@ -23,6 +23,14 @@
   }
 }
 
+// Media library Throbber
+.media-library-widget {
+  .ajax-progress__throbber {
+    border: 2px solid var(--colorGinPrimary);
+    border-right: 2px dotted transparent;
+  }
+}
+
 // UI Dialog Throbber
 .ui-dialog .ajax-progress-throbber {
   padding: .5rem;
@@ -53,6 +61,12 @@
     border-right: 2px dotted transparent;
     border-radius: 50%;
   }
+}
+
+.ajax-progress__throbber--fullscreen,
+.ui-dialog .ajax-progress__throbber,
+.media-library-item .ajax-progress__throbber {
+  @extend .ajax-progress__throbber;
 }
 
 .contextual-links {

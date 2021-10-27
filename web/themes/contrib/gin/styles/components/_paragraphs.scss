@@ -20,7 +20,10 @@
     thead {
       th {
         padding: .5rem 1.5rem .5rem .5rem;
-        border-radius: $borderDefault;
+
+        &.th__order {
+          display: none;
+        }
       }
 
       .label {
@@ -39,6 +42,10 @@
       border: 1px solid var(--colorGinTableBorder);
       border-radius: $borderDefault;
       box-shadow: 4px 4px 10px var(--colorGinLayer2Background);
+
+      .gin--dark-mode & {
+        box-shadow: none;
+      }
 
       // Current draggable item
       &.drag {
@@ -66,8 +73,13 @@
         padding: .25rem;
       }
 
-      .td__order {
+      > td + td {
         width: 100%;
+      }
+
+      .has-multiple-fields-remove-button {
+        width: 100%;
+        padding-right: 0 !important;
       }
 
       .tabledrag-handle::after {
@@ -101,7 +113,7 @@
 
   .paragraph-type-add-modal,
   .field--widget-paragraphs .paragraphs-dropbutton-wrapper {
-    margin-right: 8px;
+    margin-right: .5rem;
   }
 }
 
@@ -111,8 +123,17 @@
   }
 }
 
+.paragraphs-add-wrapper,
+.paragraphs-dropbutton-wrapper {
+  .button--small {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
+}
+
 .paragraphs-dropdown-toggle {
   position: relative;
+  margin: .5rem 0;
   background: none;
 
   &::after {
@@ -143,11 +164,24 @@
   }
 }
 
+.js .field--widget-paragraphs .paragraphs-dropbutton-wrapper .dropbutton-multiple {
+  padding: .5rem;
+
+  .dropbutton-widget {
+    margin-right: .5rem;
+  }
+}
+
+.js .field--widget-paragraphs th .paragraphs-actions .paragraphs-dropdown {
+  top: 0;
+  right: -4px;
+}
+
 .paragraphs-dropdown-actions {
   color: var(--colorGinButtonText);
   background: var(--colorGinLayer3Background);
   border: 0 none;
-  border-radius: $borderSmall;
+  border-radius: $borderXSmall;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .08),
               20px 20px 40px rgba(0, 0, 0, .12);
 
@@ -164,10 +198,11 @@
 }
 
 .js .paragraph-type-icon {
-  padding: 4px;
-  margin-right: 8px;
+  padding: .25rem;
+  margin-right: .5rem;
 }
 
+// Darkmode overrides
 .gin--dark-mode {
   .paragraphs-dropdown-actions {
     background: var(--colorGinLayer2Background);
@@ -214,4 +249,35 @@
 
 .paragraphs-dragdrop__label--field {
   text-transform: none;
+}
+
+// Classic Paragraphs
+.field--widget-entity-reference-paragraphs {
+  // Ugly addressing the title, but let's go
+  > div > .form-wrapper > strong {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  // No Paragraph added yet text
+  // No dedicated classes so targeting the element as good as possible
+  .form-wrapper .form-wrapper > em {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  // Add buttons
+  .form-actions {
+    align-items: center;
+
+    .dropbutton-multiple {
+      margin-right: .5rem;
+
+      // Support different paragraphs versions
+      .placeholder,
+      ~ .placeholder {
+        margin-left: .25rem;
+      }
+    }
+  }
 }

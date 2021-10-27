@@ -1,8 +1,8 @@
 name: Gin
 type: theme
 base theme: claro
-description: 'For a better Content Editor Experience on top of Claro'
-core_version_requirement: ^8.8 || ^9
+description: 'Admin theme with a strong focus on improving the Editorial Experience'
+core_version_requirement: ^8.8 || ^9 || ^10
 
 # Dependency on module > Drupal 8.9
 # dependencies:
@@ -34,26 +34,12 @@ libraries-override:
       component:
         /core/themes/stable/css/core/dropbutton/dropbutton.css: /core/themes/claro/css/components/dropbutton.css
 
-  core/drupal.tabledrag:
-    js:
-      misc/tabledrag.js: /core/themes/claro/js/tabledrag.js
-
   core/drupal.vertical-tabs:
     css:
       component:
         /core/themes/stable/css/core/vertical-tabs.css: false
     js:
       misc/vertical-tabs.js: /core/themes/claro/js/vertical-tabs.js
-
-  core/jquery.ui:
-    css:
-      theme:
-        assets/vendor/jquery.ui/themes/base/theme.css: false
-
-  core/jquery.ui.dialog:
-    css:
-      component:
-        assets/vendor/jquery.ui/themes/base/dialog.css: false
 
   classy/dialog: claro/claro.drupal.dialog
 
@@ -97,8 +83,6 @@ libraries-override:
 
   classy/user: false
 
-  user/drupal.user: claro/form.password-confirm
-
   field_ui/drupal.field_ui:
     css:
       theme:
@@ -138,6 +122,10 @@ libraries-override:
     js:
       js/media_library.view.js: js/overrides/gin_media_library.view.js
 
+  core/drupal.tabledrag:
+    js:
+      /core/themes/claro/js/tabledrag.js: false
+
   # Gin overrides
   core/drupal.dialog.off_canvas:
     css:
@@ -166,7 +154,7 @@ libraries-extend:
   core/drupal.collapse:
     - claro/details-focus
   core/drupal.dialog:
-    - claro/claro.drupal.dialog
+    - seven/seven.drupal.dialog
   core/drupal.dropbutton:
     - claro/dropbutton
   core/drupal.checkbox:
@@ -175,8 +163,6 @@ libraries-extend:
     - claro/messages
   core/drupal.vertical-tabs:
     - claro/vertical-tabs
-  core/jquery.ui:
-    - claro/claro.jquery.ui
   file/drupal.file:
     - claro/file
   system/admin:
@@ -192,11 +178,15 @@ libraries-extend:
   views/views.module:
     - claro/views
   media/media_embed_ckeditor_theme:
-    - claro/classy.media_embed_ckeditor_theme
+    - gin/gin_media_embed_ckeditor_theme
   media_library/view:
     - claro/media_library.theme
   media_library/widget:
     - claro/media_library.theme
+  user/drupal.user:
+    - claro/form.password-confirm
+  core/drupal.tabledrag:
+    - gin/gin_tabledrag
 
 quickedit_stylesheets:
   - ../../../core/themes/claro/css/components/quickedit.css
@@ -221,7 +211,7 @@ regions:
 regions_hidden:
   - sidebar_first
 
-# Information added by Drupal.org packaging script on 2020-11-14
-version: '8.x-3.0-alpha30'
+# Information added by Drupal.org packaging script on 2021-09-27
+version: '8.x-3.0-alpha37'
 project: 'gin'
-datestamp: 1605395015
+datestamp: 1632767976
